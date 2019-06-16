@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		059F16F122B1580E00289503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F16F022B1580E00289503 /* AppDelegate.swift */; };
+		059F16F822B1580F00289503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059F16F722B1580F00289503 /* Assets.xcassets */; };
+		059F16FB22B1580F00289503 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059F16F922B1580F00289503 /* LaunchScreen.storyboard */; };
+		059F170322B6F40200289503 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F170222B6F40200289503 /* HomeViewController.swift */; };
+		059F170522B6F4C400289503 /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F170422B6F4C400289503 /* PrayerViewController.swift */; };
+		059F170722B6F50600289503 /* PraiseJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F170622B6F50600289503 /* PraiseJournalViewController.swift */; };
+		059F170A22B6F53A00289503 /* PrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F170922B6F53A00289503 /* PrayerView.swift */; };
+		059F170C22B6F55200289503 /* PraiseJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F170B22B6F55200289503 /* PraiseJournalView.swift */; };
+		059F170F22B6F5DE00289503 /* BibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F170E22B6F5DE00289503 /* BibleViewController.swift */; };
+		059F171122B6F5EC00289503 /* BibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171022B6F5EC00289503 /* BibleView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		059F16ED22B1580E00289503 /* ThroneRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThroneRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		059F16F022B1580E00289503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		059F16F722B1580F00289503 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		059F16FA22B1580F00289503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		059F16FC22B1580F00289503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		059F170222B6F40200289503 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		059F170422B6F4C400289503 /* PrayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
+		059F170622B6F50600289503 /* PraiseJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseJournalViewController.swift; sourceTree = "<group>"; };
+		059F170922B6F53A00289503 /* PrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerView.swift; sourceTree = "<group>"; };
+		059F170B22B6F55200289503 /* PraiseJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseJournalView.swift; sourceTree = "<group>"; };
+		059F170E22B6F5DE00289503 /* BibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleViewController.swift; sourceTree = "<group>"; };
+		059F171022B6F5EC00289503 /* BibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		059F16EA22B1580E00289503 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		059F16E422B1580E00289503 = {
+			isa = PBXGroup;
+			children = (
+				059F16EF22B1580E00289503 /* ThroneRoom */,
+				059F16EE22B1580E00289503 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		059F16EE22B1580E00289503 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				059F16ED22B1580E00289503 /* ThroneRoom.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		059F16EF22B1580E00289503 /* ThroneRoom */ = {
+			isa = PBXGroup;
+			children = (
+				059F170D22B6F55800289503 /* Views */,
+				059F170822B6F50F00289503 /* Controllers */,
+				059F16F022B1580E00289503 /* AppDelegate.swift */,
+				059F16F722B1580F00289503 /* Assets.xcassets */,
+				059F16F922B1580F00289503 /* LaunchScreen.storyboard */,
+				059F16FC22B1580F00289503 /* Info.plist */,
+			);
+			path = ThroneRoom;
+			sourceTree = "<group>";
+		};
+		059F170822B6F50F00289503 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				059F170222B6F40200289503 /* HomeViewController.swift */,
+				059F170E22B6F5DE00289503 /* BibleViewController.swift */,
+				059F170422B6F4C400289503 /* PrayerViewController.swift */,
+				059F170622B6F50600289503 /* PraiseJournalViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		059F170D22B6F55800289503 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				059F170922B6F53A00289503 /* PrayerView.swift */,
+				059F170B22B6F55200289503 /* PraiseJournalView.swift */,
+				059F171022B6F5EC00289503 /* BibleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		059F16EC22B1580E00289503 /* ThroneRoom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 059F16FF22B1580F00289503 /* Build configuration list for PBXNativeTarget "ThroneRoom" */;
+			buildPhases = (
+				059F16E922B1580E00289503 /* Sources */,
+				059F16EA22B1580E00289503 /* Frameworks */,
+				059F16EB22B1580E00289503 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThroneRoom;
+			productName = ThroneRoom;
+			productReference = 059F16ED22B1580E00289503 /* ThroneRoom.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		059F16E522B1580E00289503 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Genesis Mosquera";
+				TargetAttributes = {
+					059F16EC22B1580E00289503 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 059F16E822B1580E00289503 /* Build configuration list for PBXProject "ThroneRoom" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 059F16E422B1580E00289503;
+			productRefGroup = 059F16EE22B1580E00289503 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				059F16EC22B1580E00289503 /* ThroneRoom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		059F16EB22B1580E00289503 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059F16FB22B1580F00289503 /* LaunchScreen.storyboard in Resources */,
+				059F16F822B1580F00289503 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		059F16E922B1580E00289503 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059F170C22B6F55200289503 /* PraiseJournalView.swift in Sources */,
+				059F170522B6F4C400289503 /* PrayerViewController.swift in Sources */,
+				059F170322B6F40200289503 /* HomeViewController.swift in Sources */,
+				059F171122B6F5EC00289503 /* BibleView.swift in Sources */,
+				059F170722B6F50600289503 /* PraiseJournalViewController.swift in Sources */,
+				059F16F122B1580E00289503 /* AppDelegate.swift in Sources */,
+				059F170A22B6F53A00289503 /* PrayerView.swift in Sources */,
+				059F170F22B6F5DE00289503 /* BibleViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		059F16F922B1580F00289503 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				059F16FA22B1580F00289503 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		059F16FD22B1580F00289503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		059F16FE22B1580F00289503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		059F170022B1580F00289503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9DV268QUJB;
+				INFOPLIST_FILE = ThroneRoom/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.genceci.ThroneRoom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		059F170122B1580F00289503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9DV268QUJB;
+				INFOPLIST_FILE = ThroneRoom/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.genceci.ThroneRoom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		059F16E822B1580E00289503 /* Build configuration list for PBXProject "ThroneRoom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				059F16FD22B1580F00289503 /* Debug */,
+				059F16FE22B1580F00289503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		059F16FF22B1580F00289503 /* Build configuration list for PBXNativeTarget "ThroneRoom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				059F170022B1580F00289503 /* Debug */,
+				059F170122B1580F00289503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 059F16E522B1580E00289503 /* Project object */;
+}
