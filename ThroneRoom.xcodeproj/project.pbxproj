@@ -18,6 +18,12 @@
 		059F170F22B6F5DE00289503 /* BibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F170E22B6F5DE00289503 /* BibleViewController.swift */; };
 		059F171122B6F5EC00289503 /* BibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171022B6F5EC00289503 /* BibleView.swift */; };
 		059F171322B7073B00289503 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171222B7073B00289503 /* LaunchScreenViewController.swift */; };
+		059F171522B7114A00289503 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171422B7114A00289503 /* AppError.swift */; };
+		059F171822B7119300289503 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171722B7119300289503 /* NetworkHelper.swift */; };
+		059F171A22B711C800289503 /* YouVersionAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171922B711C800289503 /* YouVersionAPIClient.swift */; };
+		059F171C22B7129E00289503 /* YouVersionVerseDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171B22B7129E00289503 /* YouVersionVerseDayModel.swift */; };
+		059F171E22B717F900289503 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171D22B717F900289503 /* HomeView.swift */; };
+		059F172022B71BB900289503 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 059F171F22B71BB900289503 /* Notes.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		059F170E22B6F5DE00289503 /* BibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleViewController.swift; sourceTree = "<group>"; };
 		059F171022B6F5EC00289503 /* BibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleView.swift; sourceTree = "<group>"; };
 		059F171222B7073B00289503 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		059F171422B7114A00289503 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppError.swift; path = ../AppError.swift; sourceTree = "<group>"; };
+		059F171722B7119300289503 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		059F171922B711C800289503 /* YouVersionAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouVersionAPIClient.swift; sourceTree = "<group>"; };
+		059F171B22B7129E00289503 /* YouVersionVerseDayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouVersionVerseDayModel.swift; sourceTree = "<group>"; };
+		059F171D22B717F900289503 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		059F171F22B71BB900289503 /* Notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +62,7 @@
 		059F16E422B1580E00289503 = {
 			isa = PBXGroup;
 			children = (
+				059F171F22B71BB900289503 /* Notes.rtf */,
 				059F16EF22B1580E00289503 /* ThroneRoom */,
 				059F16EE22B1580E00289503 /* Products */,
 			);
@@ -66,12 +79,14 @@
 		059F16EF22B1580E00289503 /* ThroneRoom */ = {
 			isa = PBXGroup;
 			children = (
+				059F171622B7116500289503 /* New Group */,
 				059F170D22B6F55800289503 /* Views */,
 				059F170822B6F50F00289503 /* Controllers */,
 				059F16F022B1580E00289503 /* AppDelegate.swift */,
 				059F16F722B1580F00289503 /* Assets.xcassets */,
 				059F16F922B1580F00289503 /* LaunchScreen.storyboard */,
 				059F16FC22B1580F00289503 /* Info.plist */,
+				059F171B22B7129E00289503 /* YouVersionVerseDayModel.swift */,
 			);
 			path = ThroneRoom;
 			sourceTree = "<group>";
@@ -92,10 +107,21 @@
 			isa = PBXGroup;
 			children = (
 				059F170922B6F53A00289503 /* PrayerView.swift */,
+				059F171D22B717F900289503 /* HomeView.swift */,
 				059F170B22B6F55200289503 /* PraiseJournalView.swift */,
 				059F171022B6F5EC00289503 /* BibleView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		059F171622B7116500289503 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				059F171422B7114A00289503 /* AppError.swift */,
+				059F171722B7119300289503 /* NetworkHelper.swift */,
+				059F171922B711C800289503 /* YouVersionAPIClient.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				059F16FB22B1580F00289503 /* LaunchScreen.storyboard in Resources */,
+				059F172022B71BB900289503 /* Notes.rtf in Resources */,
 				059F16F822B1580F00289503 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,9 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059F171A22B711C800289503 /* YouVersionAPIClient.swift in Sources */,
+				059F171E22B717F900289503 /* HomeView.swift in Sources */,
 				059F170C22B6F55200289503 /* PraiseJournalView.swift in Sources */,
 				059F170522B6F4C400289503 /* PrayerViewController.swift in Sources */,
+				059F171522B7114A00289503 /* AppError.swift in Sources */,
+				059F171C22B7129E00289503 /* YouVersionVerseDayModel.swift in Sources */,
 				059F170322B6F40200289503 /* HomeViewController.swift in Sources */,
+				059F171822B7119300289503 /* NetworkHelper.swift in Sources */,
 				059F171122B6F5EC00289503 /* BibleView.swift in Sources */,
 				059F170722B6F50600289503 /* PraiseJournalViewController.swift in Sources */,
 				059F16F122B1580E00289503 /* AppDelegate.swift in Sources */,

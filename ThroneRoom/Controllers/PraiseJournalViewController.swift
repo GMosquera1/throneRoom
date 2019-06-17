@@ -12,6 +12,7 @@ class PraiseJournalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = #colorLiteral(red: 0.6083567142, green: 0.6113156676, blue: 1, alpha: 1)
 
         // Do any additional setup after loading the view.
     }
