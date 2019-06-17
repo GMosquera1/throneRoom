@@ -10,7 +10,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-   var launchScreenViewController = HomeViewController()
+    var launchScreenViewController = LaunchScreenViewController()
     var window: UIWindow?
 
     
@@ -26,6 +26,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(dismissLaunchScreen), userInfo: nil, repeats: false)
     }
     @objc func dismissLaunchScreen() {
+        let homeViewController = HomeViewController()
+        let bibleViewController = BibleViewController()
+        let prayerViewController = PrayerViewController()
+        
+        let tabBar = UITabBarController()
+        
+        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "icons8-home-page-32"), tag: 0)
+        let homeViewControllerNavigation = UINavigationController.init(rootViewController: homeViewController)
+        
+        
+        let bibleViewControllerNavigation = UINavigationController.init(rootViewController: bibleViewController)
+        bibleViewController.tabBarItem = UITabBarItem(title: "Bible"
+            , image: #imageLiteral(resourceName: "icons8-literature-32") , tag: 1)
+        
+        let prayerViewControllerNavigation = UINavigationController(rootViewController: prayerViewController)
+        prayerViewController.tabBarItem = UITabBarItem(title: "Prayer", image: #imageLiteral(resourceName: "icons8-handshake-heart-32"), tag: 2)
+            
+        tabBar.viewControllers = [homeViewController, bibleViewController, prayerViewController]
+        
+        launchScreenViewController.present(tabBar, animated: true, completion: nil)
+        
     }
     
     

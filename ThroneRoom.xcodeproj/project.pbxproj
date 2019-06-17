@@ -17,6 +17,7 @@
 		059F170C22B6F55200289503 /* PraiseJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F170B22B6F55200289503 /* PraiseJournalView.swift */; };
 		059F170F22B6F5DE00289503 /* BibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F170E22B6F5DE00289503 /* BibleViewController.swift */; };
 		059F171122B6F5EC00289503 /* BibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171022B6F5EC00289503 /* BibleView.swift */; };
+		059F171322B7073B00289503 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171222B7073B00289503 /* LaunchScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		059F170B22B6F55200289503 /* PraiseJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseJournalView.swift; sourceTree = "<group>"; };
 		059F170E22B6F5DE00289503 /* BibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleViewController.swift; sourceTree = "<group>"; };
 		059F171022B6F5EC00289503 /* BibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleView.swift; sourceTree = "<group>"; };
+		059F171222B7073B00289503 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				059F170222B6F40200289503 /* HomeViewController.swift */,
+				059F171222B7073B00289503 /* LaunchScreenViewController.swift */,
 				059F170E22B6F5DE00289503 /* BibleViewController.swift */,
 				059F170422B6F4C400289503 /* PrayerViewController.swift */,
 				059F170622B6F50600289503 /* PraiseJournalViewController.swift */,
@@ -172,6 +175,7 @@
 				059F170722B6F50600289503 /* PraiseJournalViewController.swift in Sources */,
 				059F16F122B1580E00289503 /* AppDelegate.swift in Sources */,
 				059F170A22B6F53A00289503 /* PrayerView.swift in Sources */,
+				059F171322B7073B00289503 /* LaunchScreenViewController.swift in Sources */,
 				059F170F22B6F5DE00289503 /* BibleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
