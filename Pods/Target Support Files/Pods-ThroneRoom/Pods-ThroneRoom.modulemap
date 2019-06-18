@@ -1,0 +1,6 @@
+framework module Pods_ThroneRoom {
+  umbrella header "Pods-ThroneRoom-umbrella.h"
+
+  export *
+  module * { export * }
+}
