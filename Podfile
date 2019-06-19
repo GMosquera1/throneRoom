@@ -7,5 +7,15 @@ target 'ThroneRoom' do
 
 pod 'CVCalendar', '~> 1.6.2'
 pod 'Firebase/Core'
+pod 'SnapKit'
+pod 'Firebase/Firestore'
+pod 'Firebase/Auth'
+pod 'Firebase/Storage'
+pod 'Firebase/Messaging'
+pod 'Firebase/Database'
+pod 'Firebase/DynamicLinks'
+pod 'Kingfisher'
+pod 'Toucan'
+pod 'SCLAlertView'
 
 end

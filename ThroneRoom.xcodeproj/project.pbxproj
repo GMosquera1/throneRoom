@@ -29,6 +29,8 @@
 		05E2342422B96DBF005B096D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342322B96DBF005B096D /* CreateAccountViewController.swift */; };
 		05E2342622B96DD7005B096D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342522B96DD7005B096D /* SignInView.swift */; };
 		05E2342822B96DE2005B096D /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342722B96DE2005B096D /* CreateView.swift */; };
+		05E2342A22BAB7C4005B096D /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342922BAB7C4005B096D /* SignInModel.swift */; };
+		05E2342C22BABBF8005B096D /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342B22BABBF8005B096D /* DBService.swift */; };
 		244DE9768BC5E9B8001BE45E /* Pods_ThroneRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF66D19392712ACCFCBBCC81 /* Pods_ThroneRoom.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		05E2342322B96DBF005B096D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		05E2342522B96DD7005B096D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		05E2342722B96DE2005B096D /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		05E2342922BAB7C4005B096D /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		05E2342B22BABBF8005B096D /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		2914B817D8E988637B80610B /* Pods-ThroneRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThroneRoom.release.xcconfig"; path = "Target Support Files/Pods-ThroneRoom/Pods-ThroneRoom.release.xcconfig"; sourceTree = "<group>"; };
 		4B506396A5CD324CDF346BED /* Pods-ThroneRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThroneRoom.debug.xcconfig"; path = "Target Support Files/Pods-ThroneRoom/Pods-ThroneRoom.debug.xcconfig"; sourceTree = "<group>"; };
 		FF66D19392712ACCFCBBCC81 /* Pods_ThroneRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThroneRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				059F16F022B1580E00289503 /* AppDelegate.swift */,
+				05E2342922BAB7C4005B096D /* SignInModel.swift */,
+				05E2342B22BABBF8005B096D /* DBService.swift */,
 				05E2342222B96D95005B096D /* Sign In View Controller */,
 				059F171622B7116500289503 /* New Group */,
 				059F170D22B6F55800289503 /* Views */,
@@ -272,16 +278,36 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ThroneRoom/Pods-ThroneRoom-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				059F171A22B711C800289503 /* YouVersionAPIClient.swift in Sources */,
+				05E2342C22BABBF8005B096D /* DBService.swift in Sources */,
 				059F171E22B717F900289503 /* HomeView.swift in Sources */,
 				059F170C22B6F55200289503 /* PraiseJournalView.swift in Sources */,
 				059F170522B6F4C400289503 /* PrayerViewController.swift in Sources */,
@@ -312,6 +339,7 @@
 				059F170722B6F50600289503 /* PraiseJournalViewController.swift in Sources */,
 				059F16F122B1580E00289503 /* AppDelegate.swift in Sources */,
 				059F170A22B6F53A00289503 /* PrayerView.swift in Sources */,
+				05E2342A22BAB7C4005B096D /* SignInModel.swift in Sources */,
 				059F171322B7073B00289503 /* LaunchScreenViewController.swift in Sources */,
 				059F170F22B6F5DE00289503 /* BibleViewController.swift in Sources */,
 			);
