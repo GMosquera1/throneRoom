@@ -28,7 +28,7 @@ class SignInView: UIView {
     
     private var logo: UILabel = {
         let label = UILabel()
-        label.text = " C O N N E C T  G R O U P"
+        label.text = " G R O U P  N A M E "
         label.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         return label
     }()

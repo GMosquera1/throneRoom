@@ -14,15 +14,15 @@ struct SignInModel {
     let email: String?
     let city: String?
     let state: String?
-    let connectGroupName: String?
+    let groupName: String?
     
     
-    init(userId: String, fullName: String, email: String, city: String, state: String, connectGroupName: String) {
+    init(userId: String, fullName: String, email: String, city: String, state: String, groupName: String) {
         self.userId = userId
         self.fullName = fullName
         self.email = email
         self.city = city
         self.state = state
-        self.connectGroupName = connectGroupName
+        self.groupName = groupName
     }
 }
