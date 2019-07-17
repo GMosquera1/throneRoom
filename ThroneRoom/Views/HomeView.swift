@@ -23,6 +23,7 @@ class HomeView: UIView {
         textView.textAlignment = .center
         textView.font = UIFont.boldSystemFont(ofSize: 20)
         textView.font = UIFont(name: "Geneva", size: 20)
+        textView.text = " Verse of the Day "
         textView.isEditable = false
         return textView
     }()
@@ -33,6 +34,7 @@ class HomeView: UIView {
         textView.textAlignment = .center
         textView.font = UIFont.boldSystemFont(ofSize: 20)
         textView.font = UIFont(name: "Geneva", size: 20)
+        textView.text = " News "
         textView.isEditable = false
         return textView
     }()
@@ -68,12 +70,12 @@ class HomeView: UIView {
         announcements.topAnchor.constraint(equalTo: verseImage.bottomAnchor, constant: 5).isActive = true
         announcements.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
         announcements.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
-        announcements.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.02).isActive = true
+        announcements.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05).isActive = true
         
-        announcementsField.topAnchor.constraint(equalTo: announcements.topAnchor).isActive = true
+        announcementsField.topAnchor.constraint(equalTo: announcements.bottomAnchor).isActive = true
         announcementsField.leadingAnchor.constraint(equalTo: announcements.leadingAnchor).isActive = true
         announcementsField.trailingAnchor.constraint(equalTo: announcements.trailingAnchor).isActive = true
-    announcementsField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.01).isActive = true
+    announcementsField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05).isActive = true
         
         
 //        activityIndicator.centerYAnchor.constraint(equalTo: venueImage.centerYAnchor, constant: 0).isActive = true
