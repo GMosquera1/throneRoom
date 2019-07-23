@@ -28,7 +28,6 @@ class PrayerView: UIView {
     
     public lazy var prayerRequestTable: UITableView = {
         let prayerTable = UITableView()
-        prayerTable.estimatedRowHeight = 12.0
         return prayerTable
     }()
     
@@ -49,9 +48,10 @@ func commonInit() {
         addSubview(prayerRequestTable)
         
         prayerRequestTable.snp.makeConstraints { (make) in
-            make.top.equalTo(snp_top)
-            make.left.equalTo(20)
-            make.right.equalTo(-20)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.left.equalTo(15)
+            make.right.equalTo(-15)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
         
         

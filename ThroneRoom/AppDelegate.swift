@@ -4,7 +4,7 @@
 //
 //  Created by Genesis Mosquera on 6/12/19.
 //  Copyright © 2019 Genesis Mosquera. All rights reserved.
-//
+//e3
 import UIKit
 import Firebase
 
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let prayerViewControllerNavigation = UINavigationController(rootViewController: prayerViewController)
         prayerViewController.tabBarItem = UITabBarItem(title: "Prayer", image: #imageLiteral(resourceName: "icons8-handshake-heart-32"), tag: 3)
             
-        tabBar.viewControllers = [homeViewController, bibleViewController, praiseJournalViewController, prayerViewController]
+        tabBar.viewControllers = [homeViewController, bibleViewController, praiseJournalViewController, UINavigationController(rootViewController: prayerViewController)]
         
         launchScreenViewController.present(tabBar, animated: true, completion: nil)
         
