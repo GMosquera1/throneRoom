@@ -76,10 +76,7 @@ class HomeView: UIView {
         announcementsField.leadingAnchor.constraint(equalTo: announcements.leadingAnchor).isActive = true
         announcementsField.trailingAnchor.constraint(equalTo: announcements.trailingAnchor).isActive = true
     announcementsField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05).isActive = true
-        
-        
-//        activityIndicator.centerYAnchor.constraint(equalTo: venueImage.centerYAnchor, constant: 0).isActive = true
-//        activityIndicator.centerXAnchor.constraint(equalTo: venueImage.centerXAnchor, constant: 0).isActive = true
+
     }
     
 }

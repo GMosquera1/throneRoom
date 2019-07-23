@@ -5,7 +5,6 @@
 //  Created by Genesis Mosquera on 6/12/19.
 //  Copyright © 2019 Genesis Mosquera. All rights reserved.
 //
-
 import UIKit
 import Firebase
 
