@@ -24,26 +24,26 @@ class PrayerView: UIView {
         prayerView.layer.shadowPath = UIBezierPath(roundedRect: prayerView.bounds, cornerRadius: prayerView.layer.cornerRadius).cgPath
         return prayerView
     }()
-    
-    
+
     public lazy var prayerRequestTable: UITableView = {
         let prayerTable = UITableView()
+        prayerTable.register(PrayerTableViewCell.self, forCellReuseIdentifier: "PrayerTableViewCell")
         return prayerTable
     }()
     
-override init(frame: CGRect) {
-    super.init(frame: UIScreen.main.bounds)
-    commonInit()
-}
-required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    commonInit()
-}
-
-func commonInit() {
-    setConstraints()
-}
-
+    override init(frame: CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        commonInit()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    func commonInit() {
+        setConstraints()
+    }
+    
     func setConstraints() {
         addSubview(prayerRequestTable)
         
@@ -56,6 +56,6 @@ func commonInit() {
         
         
     }
-
-
+    
+    
 }
