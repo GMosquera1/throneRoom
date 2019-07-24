@@ -38,7 +38,6 @@ extension PrayerViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PrayerTableViewCell") as? PrayerTableViewCell else { return UITableViewCell()}
         cell.prayerGroupName.text = "Alan's Prayer Request"
         cell.prayerRequest.text = "Trying to be more like God, in His meekness"
-        
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -46,6 +45,6 @@ extension PrayerViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 35
+        return 200
     }
 }
