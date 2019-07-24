@@ -28,13 +28,13 @@ class PrayerTableViewCell: UITableViewCell {
         return prayerRequest
     }()
     
-    public var prayerReactions: UIStackView = {
-        let prayerReactions = UIStackView()
-       // prayerReactions.axis = .horizontal
-        //prayerReactions.distribution = .equalSpacing
-        prayerReactions.backgroundColor = .green
-        return prayerReactions
-    }()
+//    public var prayerReactions: UIStackView = {
+//        let prayerReactions = UIStackView()
+//       // prayerReactions.axis = .horizontal
+//        //prayerReactions.distribution = .equalSpacing
+//        prayerReactions.backgroundColor = .green
+//        return prayerReactions
+//    }()
     
     public var prayerReactionPraying: UIButton = {
         let prayerReactionPraying = UIButton(type: .custom)
@@ -70,6 +70,8 @@ class PrayerTableViewCell: UITableViewCell {
     }
     
     func setConstraints() {
+        let prayerReactions = UIStackView(arrangedSubviews: [prayerReactionHeart,prayerReactionFace, prayerReactionPraying])
+        prayerReactions.distribution = .fillEqually
         addSubview(prayerContentView)
         prayerContentView.addSubview(prayerGroupName)
         prayerContentView.addSubview(prayerRequest)
