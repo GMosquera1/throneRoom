@@ -12,29 +12,25 @@ class PrayerTableViewCell: UITableViewCell {
     
     public var prayerContentView: UIView = {
         let contentView = UIView()
-        contentView.backgroundColor = .yellow
+        contentView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
         return contentView
     }()
+    
     public var prayerGroupName: UILabel = {
         let prayerName = UILabel()
-        prayerName.backgroundColor = .blue
-        prayerName.text = "Genesis' request"
+        prayerName.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        prayerName.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        prayerName.font = UIFont(name: "Futura", size: 17)
         return prayerName
     }()
     
     public var prayerRequest: UITextView = {
         let prayerRequest = UITextView()
-        prayerRequest.backgroundColor = .red
+        prayerRequest.backgroundColor = .white
+        prayerRequest.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        prayerRequest.font = UIFont(name: "Futura", size: 19)
         return prayerRequest
     }()
-    
-//    public var prayerReactions: UIStackView = {
-//        let prayerReactions = UIStackView()
-//       // prayerReactions.axis = .horizontal
-//        //prayerReactions.distribution = .equalSpacing
-//        prayerReactions.backgroundColor = .green
-//        return prayerReactions
-//    }()
     
     public var prayerReactionPraying: UIButton = {
         let prayerReactionPraying = UIButton(type: .custom)
@@ -44,7 +40,6 @@ class PrayerTableViewCell: UITableViewCell {
     public var prayerReactionHeart: UIButton = {
         let prayerReactionHeart = UIButton(type: .custom)
         prayerReactionHeart.setImage(#imageLiteral(resourceName: "icons8-home-page-32"), for: .normal)
-        prayerReactionHeart.backgroundColor = .red
         return prayerReactionHeart
     }()
     
@@ -76,10 +71,6 @@ class PrayerTableViewCell: UITableViewCell {
         prayerContentView.addSubview(prayerGroupName)
         prayerContentView.addSubview(prayerRequest)
         prayerContentView.addSubview(prayerReactions)
-//        prayerReactions.addSubview(prayerReactionHeart)
-//        prayerReactions.addSubview(prayerReactionPraying)
-//        prayerReactions.addSubview(prayerReactionFace)
-//
         prayerContentView.snp.makeConstraints { (make) in
             make.top.equalTo(10)
             make.left.equalTo(10)
@@ -96,14 +87,14 @@ class PrayerTableViewCell: UITableViewCell {
             make.top.equalTo(prayerGroupName.snp.bottom).offset(10)
             make.left.equalTo(5)
             make.right.equalTo(-5)
-            make.height.equalTo(contentView.snp.height).multipliedBy(0.25)
+            make.height.equalTo(contentView.snp.height).multipliedBy(0.55)
         }
         
         prayerReactions.snp.makeConstraints { (make) in
-            make.top.equalTo(prayerRequest.snp.bottom).offset(10)
+            make.top.equalTo(prayerRequest.snp.bottom).offset(5)
             make.left.equalTo(contentView.snp.left).offset(10)
             make.right.equalTo(contentView.snp.right).offset(-5)
-            make.height.equalTo(contentView.snp.height).multipliedBy(0.25)
+            make.height.equalTo(contentView.snp.height).multipliedBy(0.15)
         }
         
     }

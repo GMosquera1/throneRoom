@@ -20,7 +20,6 @@ class PraiseTableViewCell: UITableViewCell {
         let praiseName = UILabel()
         praiseName.backgroundColor = .lightGray
         praiseName.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
-        praiseName.textAlignment = .left
         praiseName.font = UIFont(name: "Futura", size: 17)
         praiseName.text = "Genesis' Request"
         return praiseName
@@ -37,6 +36,7 @@ class PraiseTableViewCell: UITableViewCell {
 
     public var praiseReactionPraying: UIButton = {
         let praiseReactionPraying = UIButton(type: .custom)
+             praiseReactionPraying.setImage(#imageLiteral(resourceName: "icons8-pray-48"), for: .selected)
         praiseReactionPraying.setImage(#imageLiteral(resourceName: "icons8-pray-48").resizableImage(withCapInsets: UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2), resizingMode: .stretch), for: .normal)
         return praiseReactionPraying
     }()
