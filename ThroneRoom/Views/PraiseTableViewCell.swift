@@ -36,19 +36,19 @@ class PraiseTableViewCell: UITableViewCell {
 
     public var praiseReactionPraying: UIButton = {
         let praiseReactionPraying = UIButton(type: .custom)
-             praiseReactionPraying.setImage(#imageLiteral(resourceName: "icons8-pray-48"), for: .selected)
-        praiseReactionPraying.setImage(#imageLiteral(resourceName: "icons8-pray-48").resizableImage(withCapInsets: UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2), resizingMode: .stretch), for: .normal)
+            // praiseReactionPraying.setImage(#imageLiteral(resourceName: "icons8-pray-48"), for: .selected)
+        praiseReactionPraying.setImage(#imageLiteral(resourceName: "icons8-pray-32"), for: .normal)
         return praiseReactionPraying
     }()
     public var praiseReactionHeart: UIButton = {
         let praiseReactionHeart = UIButton(type: .custom)
-        praiseReactionHeart.setImage(#imageLiteral(resourceName: "icons8-heart-48").resizableImage(withCapInsets: UIEdgeInsets(top: 2, left: 4, bottom: 2, right: 4), resizingMode: .stretch), for: .normal)
+        praiseReactionHeart.setImage(#imageLiteral(resourceName: "icons8-heart-32"), for: .normal)
         return praiseReactionHeart
     }()
     
     public var praiseReactionFace: UIButton = {
         let praiseReactionFace = UIButton(type: .custom)
-        praiseReactionFace.setImage(#imageLiteral(resourceName: "icons8-two-hands-48").resizableImage(withCapInsets: UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2), resizingMode: .stretch), for: .normal)
+        praiseReactionFace.setImage(#imageLiteral(resourceName: "icons8-two-hands-32"), for: .normal)
         return praiseReactionFace
     }()
     

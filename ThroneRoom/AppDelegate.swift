@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let praiseJournalViewController = PraiseJournalViewController()
         
         let tabBar = UITabBarController()
+        tabBar.tabBar.barTintColor = UIColor.white
         
         homeViewController.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "icons8-home-page-32"), tag: 0)
         let homeViewControllerNavigation = UINavigationController.init(rootViewController: homeViewController)
@@ -49,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let praiseJournalViewControllerNavigation = UINavigationController(rootViewController: praiseJournalViewController)
         praiseJournalViewController.tabBarItem = UITabBarItem(title: "Praise", image: #imageLiteral(resourceName: "icons8-handshake-heart-32"), tag: 3)
             
-        tabBar.viewControllers = [homeViewController, bibleViewController, UINavigationController(rootViewController: prayerViewController), UINavigationController(rootViewController: praiseJournalViewController) ]
+        tabBar.viewControllers = [homeViewController, UINavigationController(rootViewController: bibleViewController), UINavigationController(rootViewController: prayerViewController), UINavigationController(rootViewController: praiseJournalViewController) ]
         
         launchScreenViewController.present(tabBar, animated: true, completion: nil)
         

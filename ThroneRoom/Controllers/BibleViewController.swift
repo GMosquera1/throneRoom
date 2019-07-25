@@ -7,29 +7,34 @@
 //
 
 import UIKit
+import WebKit
 
-class BibleViewController: UIViewController {
+class BibleViewController: UIViewController, WKNavigationDelegate {
 
     private var bibleView = BibleView()
+    var webView: WKWebView!
     
+    
+    override func loadView() {
+        webView = WKWebView()
+        webView.navigationDelegate = self
+        view = webView
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Verse of the Day"
+        let url = URL(string: "https://www.bible.com/bible/1/GEN.1.KJV")!
+        webView.load(URLRequest(url: url))
+        
+        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector (webView.reload))
+        toolbarItems = [refresh]
+        navigationController?.isToolbarHidden = false
+        navigationItem.title = " B I B L E "
         view.addSubview(bibleView)
         view.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        title = webView.title
     }
-    */
-
 }
