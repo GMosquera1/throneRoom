@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0528C45D22E8E9D1002248B9 /* PrayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C45C22E8E9D1002248B9 /* PrayerCollectionViewCell.swift */; };
 		0528C45F22E8F274002248B9 /* PrayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C45E22E8F274002248B9 /* PrayerTableViewCell.swift */; };
+		0528C46122EA2BC1002248B9 /* PraiseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C46022EA2BC1002248B9 /* PraiseTableViewCell.swift */; };
 		0588910F22B95DA4002B53E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0588910E22B95DA4002B53E0 /* GoogleService-Info.plist */; };
 		059F16F122B1580E00289503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F16F022B1580E00289503 /* AppDelegate.swift */; };
 		059F16F822B1580F00289503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059F16F722B1580F00289503 /* Assets.xcassets */; };
@@ -37,8 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0528C45C22E8E9D1002248B9 /* PrayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		0528C45E22E8F274002248B9 /* PrayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTableViewCell.swift; sourceTree = "<group>"; };
+		0528C46022EA2BC1002248B9 /* PraiseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseTableViewCell.swift; sourceTree = "<group>"; };
 		0588910E22B95DA4002B53E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		059F16ED22B1580E00289503 /* ThroneRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThroneRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		059F16F022B1580E00289503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,8 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				059F170922B6F53A00289503 /* PrayerView.swift */,
-				0528C45C22E8E9D1002248B9 /* PrayerCollectionViewCell.swift */,
 				0528C45E22E8F274002248B9 /* PrayerTableViewCell.swift */,
+				0528C46022EA2BC1002248B9 /* PraiseTableViewCell.swift */,
 				05E2342522B96DD7005B096D /* SignInView.swift */,
 				05E2342722B96DE2005B096D /* CreateView.swift */,
 				059F171D22B717F900289503 /* HomeView.swift */,
@@ -343,6 +343,7 @@
 				059F171E22B717F900289503 /* HomeView.swift in Sources */,
 				059F170C22B6F55200289503 /* PraiseJournalView.swift in Sources */,
 				059F170522B6F4C400289503 /* PrayerViewController.swift in Sources */,
+				0528C46122EA2BC1002248B9 /* PraiseTableViewCell.swift in Sources */,
 				05E2342422B96DBF005B096D /* CreateAccountViewController.swift in Sources */,
 				059F171522B7114A00289503 /* AppError.swift in Sources */,
 				05E2342622B96DD7005B096D /* SignInView.swift in Sources */,
@@ -356,7 +357,6 @@
 				059F16F122B1580E00289503 /* AppDelegate.swift in Sources */,
 				059F170A22B6F53A00289503 /* PrayerView.swift in Sources */,
 				05E2342A22BAB7C4005B096D /* SignInModel.swift in Sources */,
-				0528C45D22E8E9D1002248B9 /* PrayerCollectionViewCell.swift in Sources */,
 				059F171322B7073B00289503 /* LaunchScreenViewController.swift in Sources */,
 				059F170F22B6F5DE00289503 /* BibleViewController.swift in Sources */,
 			);

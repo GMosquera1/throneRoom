@@ -43,13 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         bibleViewController.tabBarItem = UITabBarItem(title: "Bible"
             , image: #imageLiteral(resourceName: "icons8-literature-32") , tag: 1)
         
-        let praiseJournalViewControllerNavigation = UINavigationController.init(rootViewController: praiseJournalViewController)
-        praiseJournalViewController.tabBarItem = UITabBarItem(title: "Praise", image: #imageLiteral(resourceName: "icons8-task-32"), tag: 2)
+        let prayerViewControllerNavigation = UINavigationController.init(rootViewController: prayerViewController)
+            prayerViewController.tabBarItem = UITabBarItem(title: "Prayer", image: #imageLiteral(resourceName: "icons8-task-32"), tag: 2)
         
-        let prayerViewControllerNavigation = UINavigationController(rootViewController: prayerViewController)
-        prayerViewController.tabBarItem = UITabBarItem(title: "Prayer", image: #imageLiteral(resourceName: "icons8-handshake-heart-32"), tag: 3)
+        let praiseJournalViewControllerNavigation = UINavigationController(rootViewController: praiseJournalViewController)
+        praiseJournalViewController.tabBarItem = UITabBarItem(title: "Praise", image: #imageLiteral(resourceName: "icons8-handshake-heart-32"), tag: 3)
             
-        tabBar.viewControllers = [homeViewController, bibleViewController, praiseJournalViewController, UINavigationController(rootViewController: prayerViewController)]
+        tabBar.viewControllers = [homeViewController, bibleViewController, UINavigationController(rootViewController: prayerViewController), UINavigationController(rootViewController: praiseJournalViewController) ]
         
         launchScreenViewController.present(tabBar, animated: true, completion: nil)
         
