@@ -14,7 +14,7 @@ class PrayerView: UIView {
     public lazy var prayerContainerView: UIView = {
         let prayerView = UIView()
         prayerView.backgroundColor = .clear
-        prayerView.layer.cornerRadius = 2.0
+        prayerView.layer.cornerRadius = 5.0
         prayerView.layer.masksToBounds = true
         prayerView.layer.shadowColor = UIColor.lightGray.cgColor
         prayerView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
@@ -28,6 +28,7 @@ class PrayerView: UIView {
     public lazy var prayerRequestTable: UITableView = {
         let prayerTable = UITableView()
         prayerTable.register(PrayerTableViewCell.self, forCellReuseIdentifier: "PrayerTableViewCell")
+        prayerTable.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
         return prayerTable
     }()
     

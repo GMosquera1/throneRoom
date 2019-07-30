@@ -15,7 +15,7 @@ class PraiseJournalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = " P R A I S E  R E P O R T S "
-        self.view.backgroundColor = #colorLiteral(red: 0.7944493294, green: 0.757812798, blue: 0.9906591773, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 1, green: 0.907350719, blue: 0.8769339919, alpha: 1)
         self.view.addSubview(praiseReportView)
         praiseReportView.praiseReportTable.dataSource = self
         
@@ -32,7 +32,7 @@ extension PraiseJournalViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PraiseTableViewCell") as? PraiseTableViewCell else { return UITableViewCell() }
-        cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        cell.backgroundColor = .clear
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

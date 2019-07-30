@@ -6,18 +6,21 @@
 //  Copyright © 2019 Genesis Mosquera. All rights reserved.
 //e3
 import UIKit
+import Foundation
 import Firebase
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var launchScreenViewController = LaunchScreenViewController()
+    //static var authservice = AuthService()
     var window: UIWindow?
+    //var usersession: UserSession!
 
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         launchScreen()
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         return true
     }
     

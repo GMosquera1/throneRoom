@@ -20,7 +20,7 @@ class PrayerViewController: UIViewController {
         self.view.addSubview(prayerView)
         prayerView.prayerRequestTable.dataSource = self
         prayerView.prayerRequestTable.delegate = self
-        
+
     
    // tableView - header sections equivalent to groups
     // cells will hold the prayers
@@ -37,7 +37,8 @@ extension PrayerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PrayerTableViewCell") as? PrayerTableViewCell else { return UITableViewCell()}
         cell.prayerGroupName.text = "Alan's Prayer Request"
-        cell.prayerRequest.text = "Trying to be more like God, in His meekness"
+        cell.prayerRequest.text = "Trying to be more like God, in His meekness. Wisdom to dicepher gray areas more efficiently"
+        cell.backgroundColor = .clear
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

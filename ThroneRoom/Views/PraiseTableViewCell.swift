@@ -12,13 +12,14 @@ class PraiseTableViewCell: UITableViewCell {
     
     public var praiseContentView: UIView = {
         let contentView = UIView()
-        contentView.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+        contentView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        contentView.layer.cornerRadius = 10.0
         return contentView
     }()
     
     public var praiseGroupName: UILabel = {
         let praiseName = UILabel()
-        praiseName.backgroundColor = .lightGray
+        praiseName.backgroundColor = .clear 
         praiseName.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         praiseName.font = UIFont(name: "Futura", size: 17)
         praiseName.text = "Genesis' Request"
@@ -37,18 +38,18 @@ class PraiseTableViewCell: UITableViewCell {
     public var praiseReactionPraying: UIButton = {
         let praiseReactionPraying = UIButton(type: .custom)
             // praiseReactionPraying.setImage(#imageLiteral(resourceName: "icons8-pray-48"), for: .selected)
-        praiseReactionPraying.setImage(#imageLiteral(resourceName: "icons8-pray-32"), for: .normal)
+        praiseReactionPraying.setImage(#imageLiteral(resourceName: "icons8-pray-32-2"), for: .normal)
         return praiseReactionPraying
     }()
     public var praiseReactionHeart: UIButton = {
         let praiseReactionHeart = UIButton(type: .custom)
-        praiseReactionHeart.setImage(#imageLiteral(resourceName: "icons8-heart-32"), for: .normal)
+        praiseReactionHeart.setImage(#imageLiteral(resourceName: "icons8-heart-32-2"), for: .normal)
         return praiseReactionHeart
     }()
     
     public var praiseReactionFace: UIButton = {
         let praiseReactionFace = UIButton(type: .custom)
-        praiseReactionFace.setImage(#imageLiteral(resourceName: "icons8-two-hands-32"), for: .normal)
+        praiseReactionFace.setImage(#imageLiteral(resourceName: "icons8-face-id-32"), for: .normal)
         return praiseReactionFace
     }()
     
@@ -83,18 +84,18 @@ class PraiseTableViewCell: UITableViewCell {
         praiseGroupName.snp.makeConstraints { (make) in
             make.top.equalTo(5)
             make.left.equalTo(2)
-            make.right.equalTo(-120)
+            make.right.equalTo(-20)
         }
         
         praiseReport.snp.makeConstraints { (make) in
-            make.top.equalTo(praiseGroupName.snp.bottom).offset(10)
-            make.left.equalTo(5)
+            make.top.equalTo(praiseGroupName.snp.bottom).offset(5)
+            make.left.equalTo(15)
             make.right.equalTo(-5)
-            make.height.equalTo(contentView.snp.height).multipliedBy(0.55)
+            make.height.equalTo(contentView.snp.height).multipliedBy(0.45)
         }
         
         praiseReactions.snp.makeConstraints { (make) in
-            make.top.equalTo(praiseReport.snp.bottom).offset(5)
+            make.top.equalTo(praiseReport.snp.bottom).offset(10)
             make.left.equalTo(contentView.snp.left).offset(10)
             make.right.equalTo(contentView.snp.right).offset(-5)
             make.height.equalTo(contentView.snp.height).multipliedBy(0.15)

@@ -10,23 +10,26 @@ import UIKit
 import SnapKit
 
 class PraiseJournalView: UIView {
-    public lazy var prayerContainerView: UIView = {
-        let prayerView = UIView()
-        prayerView.backgroundColor = .clear
-        prayerView.layer.cornerRadius = 2.0
-        prayerView.layer.masksToBounds = true
-        prayerView.layer.shadowColor = UIColor.lightGray.cgColor
-        prayerView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        prayerView.layer.shadowRadius = 3.0
-        prayerView.layer.shadowOpacity = 1.0
-        prayerView.layer.masksToBounds = false
-        prayerView.layer.shadowPath = UIBezierPath(roundedRect: prayerView.bounds, cornerRadius: prayerView.layer.cornerRadius).cgPath
-        return prayerView
+   
+    
+    public lazy var praiseContainerView: UIView = {
+        let praiseView = UIView()
+        praiseView.backgroundColor = .clear
+        praiseView.layer.cornerRadius = 5.0
+        praiseView.layer.masksToBounds = true
+        praiseView.layer.shadowColor = UIColor.lightGray.cgColor
+        praiseView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        praiseView.layer.shadowRadius = 3.0
+        praiseView.layer.shadowOpacity = 1.0
+        praiseView.layer.masksToBounds = false
+        praiseView.layer.shadowPath = UIBezierPath(roundedRect: praiseView.bounds, cornerRadius: praiseView.layer.cornerRadius).cgPath
+        return praiseView
     }()
 
     public lazy var praiseReportTable: UITableView = {
         let praiseTable = UITableView()
         praiseTable.register(PraiseTableViewCell.self, forCellReuseIdentifier: "PraiseTableViewCell")
+      praiseTable.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
         return praiseTable
     }()
     

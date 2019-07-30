@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0528C45F22E8F274002248B9 /* PrayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C45E22E8F274002248B9 /* PrayerTableViewCell.swift */; };
 		0528C46122EA2BC1002248B9 /* PraiseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C46022EA2BC1002248B9 /* PraiseTableViewCell.swift */; };
+		0528C46322F0AA00002248B9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C46222F0AA00002248B9 /* AuthService.swift */; };
+		0528C46522F0C395002248B9 /* PrayerPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C46422F0C395002248B9 /* PrayerPost.swift */; };
 		0588910F22B95DA4002B53E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0588910E22B95DA4002B53E0 /* GoogleService-Info.plist */; };
 		059F16F122B1580E00289503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F16F022B1580E00289503 /* AppDelegate.swift */; };
 		059F16F822B1580F00289503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059F16F722B1580F00289503 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		0528C45E22E8F274002248B9 /* PrayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTableViewCell.swift; sourceTree = "<group>"; };
 		0528C46022EA2BC1002248B9 /* PraiseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseTableViewCell.swift; sourceTree = "<group>"; };
+		0528C46222F0AA00002248B9 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		0528C46422F0C395002248B9 /* PrayerPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerPost.swift; sourceTree = "<group>"; };
 		0588910E22B95DA4002B53E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		059F16ED22B1580E00289503 /* ThroneRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThroneRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		059F16F022B1580E00289503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +118,9 @@
 			children = (
 				059F16F022B1580E00289503 /* AppDelegate.swift */,
 				05E2342922BAB7C4005B096D /* SignInModel.swift */,
+				0528C46222F0AA00002248B9 /* AuthService.swift */,
 				05E2342B22BABBF8005B096D /* DBService.swift */,
+				0528C46422F0C395002248B9 /* PrayerPost.swift */,
 				05E2342222B96D95005B096D /* Sign In View Controller */,
 				059F171622B7116500289503 /* New Group */,
 				0528C45B22E8B713002248B9 /* New Group */,
@@ -338,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0528C45F22E8F274002248B9 /* PrayerTableViewCell.swift in Sources */,
+				0528C46322F0AA00002248B9 /* AuthService.swift in Sources */,
 				059F171A22B711C800289503 /* YouVersionAPIClient.swift in Sources */,
 				05E2342C22BABBF8005B096D /* DBService.swift in Sources */,
 				059F171E22B717F900289503 /* HomeView.swift in Sources */,
@@ -348,6 +355,7 @@
 				059F171522B7114A00289503 /* AppError.swift in Sources */,
 				05E2342622B96DD7005B096D /* SignInView.swift in Sources */,
 				059F171C22B7129E00289503 /* YouVersionVerseDayModel.swift in Sources */,
+				0528C46522F0C395002248B9 /* PrayerPost.swift in Sources */,
 				059F170322B6F40200289503 /* HomeViewController.swift in Sources */,
 				059F171822B7119300289503 /* NetworkHelper.swift in Sources */,
 				05E2342822B96DE2005B096D /* CreateView.swift in Sources */,
