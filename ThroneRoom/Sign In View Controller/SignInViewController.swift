@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class SignInViewController: UIViewController {
 
     var signInView = SignInView()
+    let authService = AppDelegate.authservice
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,14 +13,18 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var launchScreenViewController = LaunchScreenViewController()
-    //static var authservice = AuthService()
+    static var authservice = AuthService()
     var window: UIWindow?
-    //var usersession: UserSession!
 
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         launchScreen()
-        //FirebaseApp.configure()
+        FirebaseApp.configure()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let signInView = SignInViewController()
+        window?.rootViewController = signInView
+        window?.makeKeyAndVisible()
+        self.window?.tintColor = #colorLiteral(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 1)
         return true
     }
     

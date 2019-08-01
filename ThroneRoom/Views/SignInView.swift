@@ -21,8 +21,7 @@ class SignInView: UIView {
     
     private var contentView: UIView = {
        let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
+        view.backgroundColor = #colorLiteral(red: 0.8598231673, green: 0.75836128, blue: 0.7784464359, alpha: 1)
         return view
     }()
     
@@ -36,12 +35,14 @@ class SignInView: UIView {
     private var emailTextField: UITextField = {
         let textfield = UITextField()
         textfield.placeholder = "Please Enter A Valid Email"
+        textfield.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         return textfield
     }()
     
     private var passwordTextField: UITextField = {
         let textfield = UITextField()
         textfield.placeholder = "Please Enter A Strong Password"
+        textfield.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         return textfield
     }()
     
@@ -75,15 +76,39 @@ class SignInView: UIView {
         setupViews()
     }
     private func setupViews() {
-        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(logo)
+        addSubview(contentView)
+        addSubview(logo)
+        addSubview(emailTextField)
+        addSubview(passwordTextField)
+        addSubview(signInButton)
+        addSubview(accountUpdateLabel)
         
-        logo.translatesAutoresizingMaskIntoConstraints = false
-       
-        NSLayoutConstraint.activate([logo.topAnchor.constraint(equalTo: topAnchor, constant: 10),logo.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.75), logo.centerXAnchor.constraint(equalTo: self.centerXAnchor), logo.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-            ])
+        contentView.snp.makeConstraints { (make) in
+                make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.left.equalTo(15)
+            make.right.equalTo(-15)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+        }
       
         
+        logo.snp.makeConstraints { (make) in
+            make.top.equalTo(10)
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.bottom.equalTo(-10)
+        }
+        
+        emailTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(logo.snp.bottom).offset(5)
+            make.left.equalTo(2)
+            make.right.equalTo(-20)
+        }
+        
+passwordTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(5)
+            make.left.equalTo(2)
+            make.right.equalTo(-20)
+        }
     }
     
     

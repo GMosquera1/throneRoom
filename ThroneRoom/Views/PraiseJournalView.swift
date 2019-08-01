@@ -29,7 +29,7 @@ class PraiseJournalView: UIView {
     public lazy var praiseReportTable: UITableView = {
         let praiseTable = UITableView()
         praiseTable.register(PraiseTableViewCell.self, forCellReuseIdentifier: "PraiseTableViewCell")
-      praiseTable.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+      praiseTable.backgroundColor = #colorLiteral(red: 0.8598231673, green: 0.75836128, blue: 0.7784464359, alpha: 1)
         return praiseTable
     }()
     

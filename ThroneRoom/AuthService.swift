@@ -40,19 +40,12 @@ final class AuthService {
                         return
                     }
                 })
-                let throneRoomUser = UserProfile.init(userId: authDataResult.user.uid,
-                                                      fullName: username,
-                                                      email: authDataResult.user.email!,
-                                                      photoURL: nil,
-                                                      joinedDate: Date,
-                                                      firstName: nil,
-                                                      lastName: nil,
-                                                      bio: nil)
+                let throneRoomUser = UserProfile.init(userId: authDataResult.user.uid, displayName: username, fullName: authDataResult.user.displayName!, email: authDataResult.user.email!, city: "", photoURL: "", bio: "", state: "", groupName: "", joinedDate: Date.getISOTimestamp())
                 DBService.createThroneRoomUser(user: throneRoomUser, completion: { (error) in
                     if let error = error {
-                        self.authserviceCreateNewAccountDelegate?.didRecieveErrorCreatingAccount(self, error: error)
+                        self.authServiceCreateNewAccountDelegate?.didReceiveErrorCreatingAccount(self, error: error)
                     } else {
-                        self.authserviceCreateNewAccountDelegate?.didCreateNewAccount(self, throneRoomUser: throneRoomUser)
+                        self.authServiceCreateNewAccountDelegate?.didCreateNewAccount(self, throneRoomUser: throneRoomUser)
                     }
                 })
             }

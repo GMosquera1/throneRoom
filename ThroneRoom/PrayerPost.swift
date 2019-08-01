@@ -15,23 +15,21 @@ struct PrayerCreatedByUser {
     let userId: String
     let photoURL: String
     let prayerDescription: String
+    let praiseDescription: String
     let displayName: String
     let email: String
-    let message: String
     let documentId: String
-    let startDate: Timestamp?
     
-    init(location: String, createdAt: String, userId: String, photoURL: String, prayerDescription: String, displayName: String, email: String, message: String, documentId: String, startDate: Timestamp?) {
+    init(location: String, createdAt: String, userId: String, photoURL: String, prayerDescription: String, praiseDescription:String, displayName: String, email: String, documentId: String) {
         self.location = location
         self.createdAt = createdAt
         self.userId = userId
         self.photoURL = photoURL
         self.prayerDescription = prayerDescription
+        self.praiseDescription = praiseDescription
         self.displayName = displayName
         self.email = email
         self.documentId = documentId
-        self.message = message
-        self.startDate = startDate
     }
     init(dict: [String: Any]) {
         self.location = dict[PrayerCollectionKeys.Location] as? String ?? "No Location Name"
@@ -39,6 +37,8 @@ struct PrayerCreatedByUser {
         self.userId = dict[PrayerCollectionKeys.UserID] as? String ?? "No One Logged In"
         self.photoURL = dict[PrayerCollectionKeys.PhotoURL] as? String ?? "No Photo"
         self.prayerDescription = dict[PrayerCollectionKeys.PrayerDescription] as? String ?? "No Prayer Description"
+        self.praiseDescription = dict[PrayerCollectionKeys.PraiseDescription] as? String ?? "No Prayer Description"
+        self.displayName = dict[PrayerCollectionKeys.DisplayNameKey] as? String ?? "No Display Name"
         self.email = dict[PrayerCollectionKeys.EmailKey] as? String ?? "No Email"
         self.documentId = dict[PrayerCollectionKeys.DocumentIdKey] as? String ?? "No ID"
     }
