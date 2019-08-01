@@ -20,14 +20,15 @@ protocol SignInViewDelegate: AnyObject {
 class SignInView: UIView {
     
     private var contentView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.8598231673, green: 0.75836128, blue: 0.7784464359, alpha: 1)
         return view
     }()
     
     private var logo: UILabel = {
         let label = UILabel()
-        label.text = " G R O U P  N A M E "
+        label.text = " T H R O N E  R O O M "
+        label.font = UIFont(name: "futura", size: 24)
         label.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         return label
     }()
@@ -49,12 +50,13 @@ class SignInView: UIView {
     private var signInButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign In", for: .normal)
+        button.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         return button
     }()
     
     private var accountUpdateLabel: UILabel = {
         let label = UILabel()
-        label.text = "If you already have an account, please sign in."
+        label.text = "If you already have an account, please sign in"
         label.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         return label
     }()
@@ -72,42 +74,53 @@ class SignInView: UIView {
         commonInit()
     }
     
-   private func commonInit(){
+    private func commonInit(){
         setupViews()
     }
     private func setupViews() {
         addSubview(contentView)
-        addSubview(logo)
+      addSubview(logo)
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(signInButton)
         addSubview(accountUpdateLabel)
         
         contentView.snp.makeConstraints { (make) in
-                make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
             make.left.equalTo(15)
             make.right.equalTo(-15)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
-      
         
         logo.snp.makeConstraints { (make) in
-            make.top.equalTo(10)
-            make.left.equalTo(10)
-            make.right.equalTo(-10)
-            make.bottom.equalTo(-10)
+            make.top.equalTo(95)
+            make.left.equalTo(60)
+            make.right.equalTo(-60)
         }
         
         emailTextField.snp.makeConstraints { (make) in
-            make.top.equalTo(logo.snp.bottom).offset(5)
-            make.left.equalTo(2)
-            make.right.equalTo(-20)
+            make.top.equalTo(logo.snp_bottom).offset(50)
+            make.left.equalTo(50)
+            make.right.equalTo(-50)
+      
         }
         
-passwordTextField.snp.makeConstraints { (make) in
-            make.top.equalTo(5)
-            make.left.equalTo(2)
-            make.right.equalTo(-20)
+        passwordTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(emailTextField.snp.bottom).offset(50)
+            make.left.equalTo(50)
+            make.right.equalTo(-50)
+        }
+        
+        signInButton.snp.makeConstraints { (make) in
+            make.top.equalTo(passwordTextField.snp.bottom).offset(40)
+            make.left.equalTo(50)
+            make.right.equalTo(-50)
+        }
+        
+        accountUpdateLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(signInButton.snp_bottom).offset(10)
+            make.left.equalTo(35)
+            make.right.equalTo(-35)
         }
     }
     
