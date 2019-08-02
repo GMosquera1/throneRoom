@@ -7,24 +7,37 @@
 //
 
 import UIKit
+import Firebase
+
+protocol createdAccount {
+    func createdAccount(bool: Bool)
+}
 
 class CreateAccountViewController: UIViewController {
-
+   var createView = CreateView()
+    var authService = AppDelegate.authservice
+    var delegate: createdAccount?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.addSubview(createView)
+        let leftBarItem = UIBarButtonItem(customView: createView.cancelButton)
+        createView.cancelButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = leftBarItem
+        let rightBarItem = UIBarButtonItem(customView: createView.createButton)
+        createView.createButton.addTarget(self, action: #selector(createAccount), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = rightBarItem
+//        authService.authServiceCreateNewAccountDelegate = self
+//        createView.displayName.delegate = self
+//        createView.emailCreatedWith.delegate = self
+//        createView.passwordCreatedWith.delegate = self
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func dismissView() {
+        navigationController?.popViewController(animated: true)
     }
-    */
-
+    
+    @objc func createAccount() {
+ 
 }

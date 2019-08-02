@@ -28,7 +28,7 @@ class SignInView: UIView {
     private var logo: UILabel = {
         let label = UILabel()
         label.text = " T H R O N E  R O O M "
-        label.font = UIFont(name: "futura", size: 24)
+        label.font = UIFont(name: "futura", size: 28)
         label.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         return label
     }()
@@ -47,12 +47,27 @@ class SignInView: UIView {
         return textfield
     }()
     
-    private var signInButton: UIButton = {
+    lazy var signInButton: UIButton = {
         let button = UIButton()
+        button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         button.setTitle("Sign In", for: .normal)
-        button.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
+        button.isEnabled = true
+        button.layer.cornerRadius = 5
         return button
     }()
+    
+    lazy var createAccountButton: UIButton = {
+        //private var only works within it's intended class
+        let button = UIButton()
+        button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        button.setTitle("Create Account", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
+        button.isEnabled = true
+        button.layer.cornerRadius = 5
+        return button
+    }()
+    
     
     private var accountUpdateLabel: UILabel = {
         let label = UILabel()
@@ -82,8 +97,9 @@ class SignInView: UIView {
       addSubview(logo)
         addSubview(emailTextField)
         addSubview(passwordTextField)
-        addSubview(signInButton)
+        addSubview(createAccountButton)
         addSubview(accountUpdateLabel)
+        addSubview(signInButton)
         
         contentView.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
@@ -111,18 +127,24 @@ class SignInView: UIView {
             make.right.equalTo(-50)
         }
         
-        signInButton.snp.makeConstraints { (make) in
+        createAccountButton.snp.makeConstraints { (make) in
             make.top.equalTo(passwordTextField.snp.bottom).offset(40)
             make.left.equalTo(50)
             make.right.equalTo(-50)
         }
         
         accountUpdateLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(signInButton.snp_bottom).offset(10)
+            make.top.equalTo(createAccountButton.snp_bottom).offset(10)
             make.left.equalTo(35)
             make.right.equalTo(-35)
         }
+        signInButton.snp.makeConstraints { (make) in
+            make.top.equalTo(accountUpdateLabel.snp.bottom).offset(40)
+            make.left.equalTo(50)
+            make.right.equalTo(-50)
+        }
     }
+    
     
     
     

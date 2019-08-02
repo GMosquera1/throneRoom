@@ -12,6 +12,9 @@
 		0528C46322F0AA00002248B9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C46222F0AA00002248B9 /* AuthService.swift */; };
 		0528C46522F0C395002248B9 /* PrayerPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C46422F0C395002248B9 /* PrayerPost.swift */; };
 		0528C46722F33983002248B9 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C46622F33983002248B9 /* Date+Extensions.swift */; };
+		0528C49422F48F73002248B9 /* SignInExistingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C49322F48F73002248B9 /* SignInExistingViewController.swift */; };
+		0528C49622F48FD0002248B9 /* SignInExistingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C49522F48FD0002248B9 /* SignInExistingView.swift */; };
+		0528C49822F494DA002248B9 /* UIViewControllers+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C49722F494DA002248B9 /* UIViewControllers+Alerts.swift */; };
 		0588910F22B95DA4002B53E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0588910E22B95DA4002B53E0 /* GoogleService-Info.plist */; };
 		059F16F122B1580E00289503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F16F022B1580E00289503 /* AppDelegate.swift */; };
 		059F16F822B1580F00289503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059F16F722B1580F00289503 /* Assets.xcassets */; };
@@ -45,6 +48,9 @@
 		0528C46222F0AA00002248B9 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0528C46422F0C395002248B9 /* PrayerPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerPost.swift; sourceTree = "<group>"; };
 		0528C46622F33983002248B9 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		0528C49322F48F73002248B9 /* SignInExistingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInExistingViewController.swift; sourceTree = "<group>"; };
+		0528C49522F48FD0002248B9 /* SignInExistingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInExistingView.swift; sourceTree = "<group>"; };
+		0528C49722F494DA002248B9 /* UIViewControllers+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllers+Alerts.swift"; sourceTree = "<group>"; };
 		0588910E22B95DA4002B53E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		059F16ED22B1580E00289503 /* ThroneRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThroneRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		059F16F022B1580E00289503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,12 +94,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0528C45B22E8B713002248B9 /* New Group */ = {
+		0528C45B22E8B713002248B9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0528C49722F494DA002248B9 /* UIViewControllers+Alerts.swift */,
 			);
-			name = "New Group";
-			path = "Views/New Group";
+			name = Extensions;
+			path = Views/Extensions;
 			sourceTree = "<group>";
 		};
 		059F16E422B1580E00289503 = {
@@ -126,7 +133,7 @@
 				0528C46422F0C395002248B9 /* PrayerPost.swift */,
 				05E2342222B96D95005B096D /* Sign In View Controller */,
 				059F171622B7116500289503 /* New Group */,
-				0528C45B22E8B713002248B9 /* New Group */,
+				0528C45B22E8B713002248B9 /* Extensions */,
 				059F170D22B6F55800289503 /* Views */,
 				059F170822B6F50F00289503 /* Controllers */,
 				059F16F722B1580F00289503 /* Assets.xcassets */,
@@ -159,6 +166,7 @@
 				05E2342522B96DD7005B096D /* SignInView.swift */,
 				05E2342722B96DE2005B096D /* CreateView.swift */,
 				059F171D22B717F900289503 /* HomeView.swift */,
+				0528C49522F48FD0002248B9 /* SignInExistingView.swift */,
 				059F170B22B6F55200289503 /* PraiseJournalView.swift */,
 				059F171022B6F5EC00289503 /* BibleView.swift */,
 			);
@@ -180,6 +188,7 @@
 			children = (
 				05E2342022B96D8A005B096D /* SignInViewController.swift */,
 				05E2342322B96DBF005B096D /* CreateAccountViewController.swift */,
+				0528C49322F48F73002248B9 /* SignInExistingViewController.swift */,
 			);
 			path = "Sign In View Controller";
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0528C49622F48FD0002248B9 /* SignInExistingView.swift in Sources */,
 				0528C45F22E8F274002248B9 /* PrayerTableViewCell.swift in Sources */,
 				0528C46322F0AA00002248B9 /* AuthService.swift in Sources */,
 				059F171A22B711C800289503 /* YouVersionAPIClient.swift in Sources */,
@@ -353,6 +363,7 @@
 				059F171E22B717F900289503 /* HomeView.swift in Sources */,
 				059F170C22B6F55200289503 /* PraiseJournalView.swift in Sources */,
 				059F170522B6F4C400289503 /* PrayerViewController.swift in Sources */,
+				0528C49422F48F73002248B9 /* SignInExistingViewController.swift in Sources */,
 				0528C46122EA2BC1002248B9 /* PraiseTableViewCell.swift in Sources */,
 				05E2342422B96DBF005B096D /* CreateAccountViewController.swift in Sources */,
 				059F171522B7114A00289503 /* AppError.swift in Sources */,
@@ -367,6 +378,7 @@
 				0528C46722F33983002248B9 /* Date+Extensions.swift in Sources */,
 				059F170722B6F50600289503 /* PraiseJournalViewController.swift in Sources */,
 				059F16F122B1580E00289503 /* AppDelegate.swift in Sources */,
+				0528C49822F494DA002248B9 /* UIViewControllers+Alerts.swift in Sources */,
 				059F170A22B6F53A00289503 /* PrayerView.swift in Sources */,
 				05E2342A22BAB7C4005B096D /* SignInModel.swift in Sources */,
 				059F171322B7073B00289503 /* LaunchScreenViewController.swift in Sources */,

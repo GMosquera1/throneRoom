@@ -11,6 +11,13 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let homeView = HomeView()
+    var signInViewController = SignInViewController()
+    var signInView = SignInView()
+    var createAccountViewController = CreateAccountViewController()
+    var createAccountView = CreateView()
+    var signExistingViewController = SignInExistingViewController()
+    var signExistingView = SignInExistingView()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
