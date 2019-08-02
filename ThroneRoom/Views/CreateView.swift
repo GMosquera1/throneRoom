@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class CreateView: UIView {
-
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -23,16 +23,13 @@ class CreateView: UIView {
     
     private var logo: UILabel = {
         let label = UILabel()
-        
         label.backgroundColor = .clear
         label.text = "T H R O N E  R O O M"
         label.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         label.font = UIFont(name: "Futura", size: 30)
         label.textAlignment = .center
-        
         return label
     }()
-    
     
     var emailCreatedTextField: UITextField = {
         let textfield = UITextField()
@@ -83,20 +80,20 @@ class CreateView: UIView {
         return vc
     }()
     
-    lazy var fieldContainerView:  UIStackView = {
-        let fv = UIStackView(arrangedSubviews: [displayNameTextField, emailTextField,
-                                                passwordCreatedTextField ])
-        fv.axis = .vertical
-        fv.distribution = .fillEqually
-        fv.spacing = 2
-        fv.layer.masksToBounds = true
-        fv.layer.cornerRadius = 10
-        return fv
+    lazy var accountContainerView: UIStackView = {
+        let accountView = UIStackView(arrangedSubviews: [displayNameTextField, emailCreatedTextField, passwordCreatedTextField])
+        accountView.axis = .vertical
+        accountView.distribution = .fillEqually
+        accountView.spacing = 2
+        accountView.layer.masksToBounds = true
+        accountView.layer.cornerRadius = 10
+        return accountView
     }()
-    
     private func commonInit(){
         addSubview(cancelButton)
         addSubview(createButton)
+        addSubview(displayNameTextField)
+        addSubview(accountContainerView)
         setUpView()
     }
     
@@ -104,7 +101,7 @@ class CreateView: UIView {
         backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.addSubview(logo)
         self.addSubview(stackViewContainer)
-        stackViewContainer.addSubview(fieldContainerView)
+        stackViewContainer.addSubview(accountContainerView)
         logo.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
             make.centerY.equalTo(self.snp.centerY).offset(-176)
@@ -115,7 +112,7 @@ class CreateView: UIView {
             make.top.equalTo(logo.snp.bottom).offset(50)
             make.height.equalTo(150)
         }
-        fieldContainerView.snp.makeConstraints { (make) in
+        accountContainerView.snp.makeConstraints { (make) in
             make.edges.equalTo(stackViewContainer)
         }
     }

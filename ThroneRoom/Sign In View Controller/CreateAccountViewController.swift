@@ -39,5 +39,42 @@ class CreateAccountViewController: UIViewController {
     }
     
     @objc func createAccount() {
- 
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        guard let userName = createView.displayNameTextField.text,
+        let email = createView.emailCreatedTextField.text, let password = createView.passwordCreatedTextField.text
+            else {
+                showAlert(title: "Error", message: "Create Account Error")
+                return
+        }
+        if userName.isEmpty || email.isEmpty || password.isEmpty {
+            showAlert(title: "Missing Fields", message: "Please fill out all missing fields")
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            authService.createNewAccount(username: userName, email: email, password: password)
+        }
+}
+}
+extension CreateAccountViewController: AuthServiceCreateNewAccountDelegate {
+    func didReceiveErrorCreatingAccount(_ authService: AuthService, error: Error) {
+        showAlert(title: "Error", message: error.localizedDescription)
+        delegate?.createdAccount(bool: false)
+    }
+    
+    func didCreateNewAccount(_ authService: AuthService, throneRoomUser: UserProfile) {
+        delegate?.createdAccount(bool: true)
+        if let homeController = (parent as? UINavigationController)?.viewControllers.first
+            as? HomeViewController {
+            homeController.signInView.removeFromSuperview()
+            homeController.reloadInputViews()
+            navigationController?.popViewController(animated: true)
+           
+            
+        }
+    }
+}
+extension CreateAccountViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true 
+    }
 }
