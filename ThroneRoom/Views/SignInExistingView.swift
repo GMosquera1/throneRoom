@@ -26,7 +26,7 @@ class SignInExistingView: UIView {
         label.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         label.text = "T H R O N E  R O O M"
         label.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
-        label.font = UIFont(name: "Futura", size: 36)
+        label.font = UIFont(name: "Futura", size: 30)
         label.textAlignment = .center
         return label
     }()

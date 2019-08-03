@@ -39,6 +39,7 @@
 		05E2342822B96DE2005B096D /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342722B96DE2005B096D /* CreateView.swift */; };
 		05E2342A22BAB7C4005B096D /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342922BAB7C4005B096D /* SignInModel.swift */; };
 		05E2342C22BABBF8005B096D /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342B22BABBF8005B096D /* DBService.swift */; };
+		05E80FFC22F5ED860046E6DD /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E80FFB22F5ED860046E6DD /* UIViewController+Navigation.swift */; };
 		244DE9768BC5E9B8001BE45E /* Pods_ThroneRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF66D19392712ACCFCBBCC81 /* Pods_ThroneRoom.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		05E2342722B96DE2005B096D /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		05E2342922BAB7C4005B096D /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		05E2342B22BABBF8005B096D /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		05E80FFB22F5ED860046E6DD /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		2914B817D8E988637B80610B /* Pods-ThroneRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThroneRoom.release.xcconfig"; path = "Target Support Files/Pods-ThroneRoom/Pods-ThroneRoom.release.xcconfig"; sourceTree = "<group>"; };
 		4B506396A5CD324CDF346BED /* Pods-ThroneRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThroneRoom.debug.xcconfig"; path = "Target Support Files/Pods-ThroneRoom/Pods-ThroneRoom.debug.xcconfig"; sourceTree = "<group>"; };
 		FF66D19392712ACCFCBBCC81 /* Pods_ThroneRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThroneRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				0528C49722F494DA002248B9 /* UIViewControllers+Alerts.swift */,
+				05E80FFB22F5ED860046E6DD /* UIViewController+Navigation.swift */,
 			);
 			name = Extensions;
 			path = Views/Extensions;
@@ -357,6 +360,7 @@
 			files = (
 				0528C49622F48FD0002248B9 /* SignInExistingView.swift in Sources */,
 				0528C45F22E8F274002248B9 /* PrayerTableViewCell.swift in Sources */,
+				05E80FFC22F5ED860046E6DD /* UIViewController+Navigation.swift in Sources */,
 				0528C46322F0AA00002248B9 /* AuthService.swift in Sources */,
 				059F171A22B711C800289503 /* YouVersionAPIClient.swift in Sources */,
 				05E2342C22BABBF8005B096D /* DBService.swift in Sources */,

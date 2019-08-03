@@ -27,11 +27,11 @@ class CreateAccountViewController: UIViewController {
         let rightBarItem = UIBarButtonItem(customView: createView.createButton)
         createView.createButton.addTarget(self, action: #selector(createAccount), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = rightBarItem
-//        authService.authServiceCreateNewAccountDelegate = self
-//        createView.displayName.delegate = self
-//        createView.emailCreatedWith.delegate = self
-//        createView.passwordCreatedWith.delegate = self
-        
+        authService.authServiceCreateNewAccountDelegate = self
+        createView.displayNameTextField.delegate = self
+        createView.emailCreatedTextField.delegate = self
+        createView.passwordCreatedTextField.delegate = self
+        hideKeyboardWhenTappingAround()
     }
     
     @objc func dismissView() {
