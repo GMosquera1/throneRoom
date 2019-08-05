@@ -27,7 +27,7 @@ class SignInView: UIView {
     
     private var logo: UILabel = {
         let label = UILabel()
-        label.text = " T H R O N E  R O O M "
+        label.text = " T H R O N E   R O O M "
         label.font = UIFont(name: "futura", size: 24)
         label.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         return label
@@ -47,6 +47,7 @@ class SignInView: UIView {
         textfield.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         textfield.placeholder = "   Please Enter A Strong Password"
         textfield.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        textfield.isSecureTextEntry = true 
         textfield.layer.cornerRadius = 5
         return textfield
     }()
@@ -115,8 +116,8 @@ class SignInView: UIView {
         
         logo.snp.makeConstraints { (make) in
             make.top.equalTo(95)
-            make.left.equalTo(60)
-            make.right.equalTo(-60)
+            make.left.equalTo(70)
+            make.right.equalTo(-70)
         }
         
         emailTextField.snp.makeConstraints { (make) in

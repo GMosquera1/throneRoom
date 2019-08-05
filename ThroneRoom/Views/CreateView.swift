@@ -35,7 +35,7 @@ class CreateView: UIView {
         let textfield = UITextField()
         textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
         textfield.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
-        textfield.placeholder = "Enter Email"
+        textfield.placeholder = "  Enter Email"
         return textfield
     }()
     
@@ -43,7 +43,7 @@ class CreateView: UIView {
         let textfield = UITextField()
         textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
         textfield.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
-        textfield.placeholder = "Enter Password"
+        textfield.placeholder = "  Enter Password"
         textfield.isSecureTextEntry = true
         return textfield
     }()
@@ -52,7 +52,9 @@ class CreateView: UIView {
         let textfield = UITextField()
         textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
         textfield.textColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
-        textfield.placeholder = "Display Name"
+        //TODO: find out how to align (Indent) text
+        textfield.placeholder = "  Display Name"
+       // textfield.textAlignment
         return textfield
     }()
     

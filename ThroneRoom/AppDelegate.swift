@@ -21,8 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         launchScreen()
         FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
-        let signInView = SignInViewController()
-        window?.rootViewController = signInView
+//        let signInViewController = SignInViewController()
+//        let signInViewControllerNavigation = UINavigationController.init(rootViewController: signInViewController)
+//        window?.rootViewController = signInViewController
+        let createViewController = CreateAccountViewController()
+        let createViewControllerNavigation = UINavigationController.init(rootViewController: createViewController)
+        window?.rootViewController = createViewController
         window?.makeKeyAndVisible()
         self.window?.tintColor = #colorLiteral(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 1)
         return true
