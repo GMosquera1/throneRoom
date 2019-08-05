@@ -22,7 +22,7 @@ class CreateAccountViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(createView)
         let leftBarItem = UIBarButtonItem(customView: createView.signInButton)
-        createView.signInButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        createView.signInButton.addTarget(self, action: #selector(signInView), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = leftBarItem
         let rightBarItem = UIBarButtonItem(customView: createView.createButton)
         createView.createButton.addTarget(self, action: #selector(createAccount), for: .touchUpInside)
@@ -34,8 +34,11 @@ class CreateAccountViewController: UIViewController {
         hideKeyboardWhenTappingAround()
     }
     
-    @objc func dismissView() {
-        navigationController?.popViewController(animated: true)
+    @objc func signInView() {
+        //navigationController?.popViewController(animated: true)
+        let signInViewController = SignInViewController()
+        let signInViewControllerNavigation = UINavigationController.init(rootViewController: signInViewController)
+       navigationController?.show(signInViewController, sender: self)
     }
     
     @objc func createAccount() {

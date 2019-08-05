@@ -63,7 +63,7 @@ class CreateView: UIView {
         button.setTitle("Sign In", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
         button.isEnabled = true
-        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 1, green: 0.8934749961, blue: 0.8764544129, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         return button
@@ -73,7 +73,7 @@ class CreateView: UIView {
         var button = UIButton()
         button.setTitle("Create Account", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 1, green: 0.8934749961, blue: 0.8764544129, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         button.isEnabled = true

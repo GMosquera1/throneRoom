@@ -27,12 +27,12 @@ class SignInExistingViewController: UIViewController {
         view.addSubview(signInExistingView)
         
         let leftBarItem = UIBarButtonItem(customView: signInExistingView.cancelButton)
-        signInExistingView.cancelButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        signInExistingView.signInButton.addTarget(self, action: #selector(signInView), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = leftBarItem
         let rightBarItem = UIBarButtonItem(customView: signInExistingView.signInButton)
         signInExistingView.emailLogin.addTarget(self, action: #selector(signInWithCreatedAccount), for: .touchUpInside)
     }
-    @objc func dismissView() {
+    @objc func signInView() {
         navigationController?.popViewController(animated: true)
     }
     @objc func signInWithCreatedAccount(){
