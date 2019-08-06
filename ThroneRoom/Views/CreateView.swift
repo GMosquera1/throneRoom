@@ -36,6 +36,7 @@ class CreateView: UIView {
         textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
         textfield.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         textfield.placeholder = "  Enter Email"
+        textfield.layer.cornerRadius = 5
         return textfield
     }()
     
@@ -63,7 +64,7 @@ class CreateView: UIView {
         button.setTitle("Sign In", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
         button.isEnabled = true
-        button.backgroundColor = #colorLiteral(red: 1, green: 0.8934749961, blue: 0.8764544129, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         return button

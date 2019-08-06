@@ -33,7 +33,9 @@ class SignInExistingViewController: UIViewController {
         signInExistingView.emailLogin.addTarget(self, action: #selector(signInWithCreatedAccount), for: .touchUpInside)
     }
     @objc func signInView() {
-        navigationController?.popViewController(animated: true)
+       // navigationController?.popViewController(animated: true)
+        let signInViewController = SignInViewController()
+        navigationController?.popToViewController(signInViewController, animated: true)
     }
     @objc func signInWithCreatedAccount(){
         guard let emailField = signInExistingView.emailLogin.text,

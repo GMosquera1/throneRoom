@@ -21,12 +21,12 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(createView)
-        let leftBarItem = UIBarButtonItem(customView: createView.signInButton)
+        //let leftBarItem = UIBarButtonItem(customView: createView.signInButton)
         createView.signInButton.addTarget(self, action: #selector(signInView), for: .touchUpInside)
-        self.navigationItem.leftBarButtonItem = leftBarItem
-        let rightBarItem = UIBarButtonItem(customView: createView.createButton)
+        //self.navigationItem.leftBarButtonItem = leftBarItem
+        //let rightBarItem = UIBarButtonItem(customView: createView.createButton)
         createView.createButton.addTarget(self, action: #selector(createAccount), for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = rightBarItem
+        //self.navigationItem.rightBarButtonItem = rightBarItem
         authService.authServiceCreateNewAccountDelegate = self
         createView.displayNameTextField.delegate = self
         createView.emailCreatedTextField.delegate = self
@@ -35,13 +35,18 @@ class CreateAccountViewController: UIViewController {
     }
     
     @objc func signInView() {
+        print("I sign in")
         //navigationController?.popViewController(animated: true)
         let signInViewController = SignInViewController()
+        
         let signInViewControllerNavigation = UINavigationController.init(rootViewController: signInViewController)
+        
+        //present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
        navigationController?.show(signInViewController, sender: self)
     }
     
     @objc func createAccount() {
+        print("I create")
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         guard let userName = createView.displayNameTextField.text,
         let email = createView.emailCreatedTextField.text, let password = createView.passwordCreatedTextField.text

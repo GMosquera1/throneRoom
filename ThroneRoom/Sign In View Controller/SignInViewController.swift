@@ -22,14 +22,17 @@ class SignInViewController: UIViewController {
 
     }
     func accountButtons() {
-        signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
+//        signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
         signInView.signInButton.addTarget(self, action: #selector(signInExistingButton), for: .touchUpInside)
     }
     @objc func createAccountButton(){
+    print("I'm creating!")
         let createAccountViewController = CreateAccountViewController()
         self.navigationController?.pushViewController(createAccountViewController, animated: true)
+    
     }
     @objc func signInExistingButton() {
+        print("I'm signing in")
         let signInExistingView = SignInExistingViewController()
         self.navigationController?.pushViewController(signInExistingView, animated: true)
     }
