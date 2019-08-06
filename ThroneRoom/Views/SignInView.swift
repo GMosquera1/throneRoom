@@ -39,7 +39,7 @@ class SignInView: UIView {
         textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
         textfield.placeholder = "   Enter Email Address"
         textfield.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
-        textfield.layer.cornerRadius = 5
+        //textfield.layer.cornerRadius = 5
         return textfield
     }()
     
@@ -49,7 +49,7 @@ class SignInView: UIView {
         textfield.placeholder = "   Enter Password"
         textfield.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         textfield.isSecureTextEntry = true 
-        textfield.layer.cornerRadius = 5
+       // textfield.layer.cornerRadius = 5
         return textfield
     }()
     
@@ -63,6 +63,15 @@ class SignInView: UIView {
         return button
     }()
 
+    lazy var createAccountButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+        button.setTitle("Create Account", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
+        button.isEnabled = true
+        button.layer.cornerRadius = 10
+        return button
+    }()
     lazy var stackViewContainer: UIView = {
         let vc = UIView()
         vc.layer.cornerRadius = 10
@@ -96,9 +105,10 @@ class SignInView: UIView {
     }
     
     private func commonInit(){
-        addSubview(signInButton)
         addSubview(logo)
         addSubview(accountContainerView)
+        addSubview(createAccountButton)
+        addSubview(signInButton)
         setupViews()
     }
     private func setupViews() {
@@ -109,25 +119,30 @@ class SignInView: UIView {
         stackViewContainer.addSubview(accountContainerView)
 
         logo.snp.makeConstraints { (make) in
-            make.top.equalTo(95)
-            make.left.equalTo(70)
-            make.right.equalTo(-70)
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY).offset(-176)
         }
         stackViewContainer.snp.makeConstraints { (make) in
             make.left.equalTo(20)
             make.right.equalTo(-20)
             make.top.equalTo(logo.snp.bottom).offset(50)
-            make.height.equalTo(150)
+            make.height.equalTo(99)
         }
         accountContainerView.snp.makeConstraints { (make) in
             make.edges.equalTo(stackViewContainer)
         }
         
-        signInButton.snp.makeConstraints { (make) in
+        createAccountButton.snp.makeConstraints { (make) in
             make.top.equalTo(passwordTextField.snp.bottom).offset(30)
             make.left.equalTo(120)
             make.right.equalTo(-120)
         }
+        signInButton.snp.makeConstraints { (make) in
+            make.top.equalTo(createAccountButton.snp.bottom).offset(10)
+            make.left.equalTo(120)
+            make.right.equalTo(-120)
+        }
+       
     }
     
     

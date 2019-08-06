@@ -12,6 +12,7 @@ import Firebase
 class SignInViewController: UIViewController {
 
     var signInView = SignInView()
+    var homeView = HomeView()
     let authService = AppDelegate.authservice
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class SignInViewController: UIViewController {
     func accountButtons() {
 //        signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
         signInView.signInButton.addTarget(self, action: #selector(signInExistingButton), for: .touchUpInside)
+        signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
     }
     @objc func createAccountButton(){
     print("I'm creating!")
@@ -33,7 +35,8 @@ class SignInViewController: UIViewController {
     }
     @objc func signInExistingButton() {
         print("I'm signing in")
-        let signInExistingView = SignInExistingViewController()
-        self.navigationController?.pushViewController(signInExistingView, animated: true)
+        /// TO-DO log in should redirect to homescreen 
+        let homeViewController = HomeViewController()
+        self.navigationController?.pushViewController(homeViewController, animated: true)
     }
 }

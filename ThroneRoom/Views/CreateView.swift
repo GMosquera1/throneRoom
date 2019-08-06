@@ -59,16 +59,16 @@ class CreateView: UIView {
         return textfield
     }()
     
-    lazy var signInButton: UIButton = {
-        var button = UIButton()
-        button.setTitle("Sign In", for: .normal)
-        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
-        button.isEnabled = true
-        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = 10
-        return button
-    }()
+//    lazy var signInButton: UIButton = {
+//        var button = UIButton()
+//        button.setTitle("Sign In", for: .normal)
+//        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
+//        button.isEnabled = true
+//        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+//        button.layer.masksToBounds = true
+//        button.layer.cornerRadius = 10
+//        return button
+//    }()
     
     lazy var createButton: UIButton = {
         var button = UIButton()
@@ -99,7 +99,6 @@ class CreateView: UIView {
         return accountView
     }()
     private func commonInit(){
-        addSubview(signInButton)
         addSubview(createButton)
         addSubview(displayNameTextField)
         addSubview(accountContainerView)
@@ -128,12 +127,6 @@ class CreateView: UIView {
             make.left.equalTo(130)
             make.right.equalTo(-130)
             make.top.equalTo(accountContainerView.snp.bottom).offset(60)
-            make.height.equalTo(40)
-        }
-        signInButton.snp.makeConstraints { (make) in
-            make.left.equalTo(130)
-            make.right.equalTo(-130)
-            make.top.equalTo(createButton.snp.bottom).offset(10)
             make.height.equalTo(40)
         }
         
