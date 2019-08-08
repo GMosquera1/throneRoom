@@ -59,6 +59,16 @@ class CreateView: UIView {
         return textfield
     }()
     
+    var fullNameTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
+        textfield.textColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
+        //TODO: find out how to align (Indent) text
+        textfield.placeholder = "  Full Name"
+        // textfield.textAlignment
+        return textfield
+    }()
+    
 //    lazy var signInButton: UIButton = {
 //        var button = UIButton()
 //        button.setTitle("Sign In", for: .normal)
@@ -90,7 +100,7 @@ class CreateView: UIView {
     }()
     
     lazy var accountContainerView: UIStackView = {
-        let accountView = UIStackView(arrangedSubviews: [displayNameTextField, emailCreatedTextField, passwordCreatedTextField])
+        let accountView = UIStackView(arrangedSubviews: [displayNameTextField, fullNameTextField, emailCreatedTextField, passwordCreatedTextField])
         accountView.axis = .vertical
         accountView.distribution = .fillEqually
         accountView.spacing = 2
@@ -118,7 +128,7 @@ class CreateView: UIView {
             make.left.equalTo(20)
             make.right.equalTo(-20)
             make.top.equalTo(logo.snp.bottom).offset(50)
-            make.height.equalTo(150)
+            make.height.equalTo(200)
         }
         accountContainerView.snp.makeConstraints { (make) in
             make.edges.equalTo(stackViewContainer)

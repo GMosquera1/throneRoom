@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 
+let createView = CreateView()
 protocol AuthServiceCreateNewAccountDelegate: AnyObject {
     func didReceiveErrorCreatingAccount(_ authService: AuthService, error: Error)
     func didCreateNewAccount(_ authService: AuthService, throneRoomUser: UserProfile)
@@ -25,7 +26,7 @@ final class AuthService {
     weak var authServiceCreateNewAccountDelegate: AuthServiceCreateNewAccountDelegate?
     weak var authServiceExistingAccountDelegate: AuthServiceExistingAccountDelegate?
     weak var authServiceSignOutDelegate: AuthServiceSignOutDelegate?
-    public func createNewAccount(username: String, email: String, password: String) {
+    public func createNewAccount(throneUserName: String, fullName: String, email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { (authDataResult, error) in
             if let error = error {
                 self.authServiceCreateNewAccountDelegate?.didReceiveErrorCreatingAccount(self, error: error)
@@ -33,19 +34,22 @@ final class AuthService {
             } else if let authDataResult = authDataResult {
                 
                 let request = authDataResult.user.createProfileChangeRequest()
-                request.displayName = username
+                request.displayName = "@" + throneUserName
                 request.commitChanges(completion: { (error) in
                     if let error = error {
                         self.authServiceCreateNewAccountDelegate?.didReceiveErrorCreatingAccount(self, error: error)
                         return
                     }
                 })
-                let throneRoomUser = UserProfile.init(userId: authDataResult.user.uid, displayName: username, fullName: authDataResult.user.displayName!, email: authDataResult.user.email!, city: "", photoURL: "", bio: "", state: "", groupName: "", joinedDate: Date.getISOTimestamp())
-                DBService.createThroneRoomUser(user: throneRoomUser, completion: { (error) in
+                guard let userID = Auth.auth().currentUser?.uid else {return}
+                let myUser = UserProfile(userId: userID, displayName: throneUserName, fullName: fullName, email: email, city: "", photoURL: "")
+//                let throneRoomUser = UserProfile.init(userId: authDataResult.user.uid, displayName: throneUserName, fullName: fullName, email: authDataResult.user.email!, photoURL: "")
+                
+                DBService.createThroneRoomUser(user: myUser, completion: { (error) in
                     if let error = error {
                         self.authServiceCreateNewAccountDelegate?.didReceiveErrorCreatingAccount(self, error: error)
                     } else {
-                        self.authServiceCreateNewAccountDelegate?.didCreateNewAccount(self, throneRoomUser: throneRoomUser)
+                        self.authServiceCreateNewAccountDelegate?.didCreateNewAccount(self, throneRoomUser: myUser)
                     }
                 })
             }

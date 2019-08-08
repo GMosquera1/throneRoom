@@ -64,7 +64,7 @@ final class DBService {
         firestoreDB.collection(PrayerCollectionKeys.CollectionKeys).document(user.userId!).setData([PrayerCollectionKeys.CollectionKeys : user.displayName,
                                                                                                     PrayerCollectionKeys.DisplayNameKey: user.displayName,
                                                                                                     PrayerCollectionKeys.EmailKey: user.email,
-                                                                                                    PrayerCollectionKeys.DocumentIdKey: user.joinedDate])
+                                                                                                    PrayerCollectionKeys.DocumentIdKey: user.fullName])
             
         { (error) in
             if let error = error {

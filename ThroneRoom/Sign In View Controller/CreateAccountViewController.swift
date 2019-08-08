@@ -14,19 +14,14 @@ protocol createdAccount {
 }
 
 class CreateAccountViewController: UIViewController {
-   var createView = CreateView()
+    var createView = CreateView()
     var authService = AppDelegate.authservice
     var delegate: createdAccount?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(createView)
-        //let leftBarItem = UIBarButtonItem(customView: createView.signInButton)
-        //createView.signInButton.addTarget(self, action: #selector(signInView), for: .touchUpInside)
-        //self.navigationItem.leftBarButtonItem = leftBarItem
-        //let rightBarItem = UIBarButtonItem(customView: createView.createButton)
         createView.createButton.addTarget(self, action: #selector(createAccount), for: .touchUpInside)
-        //self.navigationItem.rightBarButtonItem = rightBarItem
         authService.authServiceCreateNewAccountDelegate = self
         createView.displayNameTextField.delegate = self
         createView.emailCreatedTextField.delegate = self
@@ -42,25 +37,26 @@ class CreateAccountViewController: UIViewController {
         let signInViewControllerNavigation = UINavigationController.init(rootViewController: signInViewController)
         
         //present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-       navigationController?.show(signInViewController, sender: self)
+        navigationController?.show(signInViewController, sender: self)
     }
     
     @objc func createAccount() {
         print("I create")
-        self.navigationItem.rightBarButtonItem?.isEnabled = false
-        guard let userName = createView.displayNameTextField.text,
-        let email = createView.emailCreatedTextField.text, let password = createView.passwordCreatedTextField.text
+        //self.createView.createButton.isEnabled = true 
+        guard let displayName = createView.displayNameTextField.text,
+            let fullName = createView.fullNameTextField.text,
+            let email = createView.emailCreatedTextField.text, let password = createView.passwordCreatedTextField.text
             else {
                 showAlert(title: "Error", message: "Create Account Error")
                 return
         }
-        if userName.isEmpty || email.isEmpty || password.isEmpty {
+        if displayName.isEmpty || fullName.isEmpty || email.isEmpty || password.isEmpty {
             showAlert(title: "Missing Fields", message: "Please fill out all missing fields")
-        self.navigationItem.rightBarButtonItem?.isEnabled = true
+            self.createView.createButton.isEnabled = false
         } else {
-            authService.createNewAccount(username: userName, email: email, password: password)
+            authService.createNewAccount(throneUserName: displayName, fullName: fullName, email: email, password: password)
         }
-}
+    }
 }
 extension CreateAccountViewController: AuthServiceCreateNewAccountDelegate {
     func didReceiveErrorCreatingAccount(_ authService: AuthService, error: Error) {
@@ -75,8 +71,7 @@ extension CreateAccountViewController: AuthServiceCreateNewAccountDelegate {
             homeController.signInView.removeFromSuperview()
             homeController.reloadInputViews()
             navigationController?.popViewController(animated: true)
-           
-            
+            //homeController.
         }
     }
 }
@@ -86,3 +81,4 @@ extension CreateAccountViewController: UITextFieldDelegate {
         return true 
     }
 }
+
