@@ -38,6 +38,12 @@ class CreateView: UIView {
         return userImageButton
     }()
     
+    var imageSelectionLabel: UILabel = {
+       let label = UILabel()
+        label.text = " Please Select Image (optiona)"
+        return label
+    }()
+    
     var emailCreatedTextField: UITextField = {
         let textfield = UITextField()
         textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
@@ -140,23 +146,31 @@ class CreateView: UIView {
         backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.addSubview(logo)
         self.addSubview(throneRoomUserImageButton)
+        self.addSubview(imageSelectionLabel)
         self.addSubview(stackViewContainer)
         stackViewContainer.addSubview(accountContainerView)
         logo.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.centerY.equalTo(self.snp.centerY).offset(-275)
+            make.centerY.equalTo(self.snp.centerY).offset(-300)
         }
         
         throneRoomUserImageButton.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.snp.centerX)
-            make.centerY.equalTo(self.snp.centerY).offset(-125)
+            make.centerX.equalTo(logo.snp.centerX)
+          //  make.centerY.equalTo(self.snp.centerY).offset(-100)
+            make.top.equalTo(logo.snp.bottom).offset(25)
             make.height.equalTo(150)
             make.width.equalTo(150)
+        }
+        imageSelectionLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(throneRoomUserImageButton.snp.centerX).offset(10)
+            //make.centerY.equalTo(throneRoomUserImageButton.snp.centerY).offset(-10)
+            make.top.equalTo(throneRoomUserImageButton.snp.bottom).offset(10)
+            
         }
         stackViewContainer.snp.makeConstraints { (make) in
             make.left.equalTo(20)
             make.right.equalTo(-20)
-            make.top.equalTo(throneRoomUserImageButton.snp.bottom).offset(30)
+            make.top.equalTo(imageSelectionLabel.snp.bottom).offset(10)
             make.height.equalTo(250)
         }
         accountContainerView.snp.makeConstraints { (make) in
