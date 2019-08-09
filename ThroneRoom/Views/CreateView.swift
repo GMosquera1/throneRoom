@@ -24,7 +24,7 @@ class CreateView: UIView {
     private var logo: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
-        label.text = "T H R O N E  R O O M"
+        label.text = "T H R O N E   R O O M"
         label.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         label.font = UIFont(name: "Futura", size: 30)
         label.textAlignment = .center

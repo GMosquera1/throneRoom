@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/SignInViewController.swift"
-            timestampString = "587067753.274537"
+            timestampString = "587075879.8044339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/SignInViewController.swift"
-            timestampString = "587067753.2745939"
+            timestampString = "587075879.804527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/CreateAccountViewController.swift"
-            timestampString = "587067753.274634"
+            timestampString = "587080213.77408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "createAccount()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/CreateAccountViewController.swift"
-            timestampString = "587067753.2746741"
+            timestampString = "587080213.774393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "CreateAccountViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/CreateAccountViewController.swift"
-            timestampString = "587067753.274709"
+            timestampString = "587080213.774599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "createAccount()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/CreateAccountViewController.swift"
-            timestampString = "587067753.274743"
+            timestampString = "587080213.7747999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "createAccount()"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/AuthService.swift"
-            timestampString = "587067753.274811"
+            timestampString = "587080213.775021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "createNewAccount(throneUserName:fullName:email:password:)"
+            landmarkName = "createNewAccount(throneUserName:fullName:cityName:email:password:photoURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/AuthService.swift"
-            timestampString = "587067753.274848"
+            timestampString = "587080213.775067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "createNewAccount(throneUserName:fullName:email:password:)"
+            landmarkName = "createNewAccount(throneUserName:fullName:cityName:email:password:photoURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,28 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/AuthService.swift"
-            timestampString = "587067753.274883"
+            timestampString = "587080213.775107"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "createNewAccount(throneUserName:fullName:email:password:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ThroneRoom/AuthService.swift"
-            timestampString = "587067753.2749161"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "createNewAccount(throneUserName:fullName:email:password:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "createNewAccount(throneUserName:fullName:cityName:email:password:photoURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

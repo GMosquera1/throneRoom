@@ -30,10 +30,11 @@ struct PrayerCollectionKeys {
 
 struct ProfileCollectionKeys {
     static let CollectionKey = "Profile"
-    static let ProfileIdKey = "ProfileId"
+    static let FullNameKey = "fullName"
     static let DisplayNameKey = "displayName"
-    static let FirstNameKey = "firstName"
-    static let LastNameKey = "lastName"
+    static let CityKey = "city"
+    //    static let FirstNameKey = "firstName"
+    //    static let LastNameKey = "lastName"
     static let EmailKey = "email"
     static let PhotoURLKey = "photoURL"
     static let CoverImageURLKey = "coverImageURL"
@@ -61,10 +62,11 @@ final class DBService {
     
     
     static public func createThroneRoomUser(user: UserProfile, completion: @escaping (Error?) -> Void) {
-        firestoreDB.collection(PrayerCollectionKeys.CollectionKeys).document(user.userId!).setData([PrayerCollectionKeys.CollectionKeys : user.displayName,
-                                                                                                    PrayerCollectionKeys.DisplayNameKey: user.displayName,
-                                                                                                    PrayerCollectionKeys.EmailKey: user.email,
-                                                                                                    PrayerCollectionKeys.DocumentIdKey: user.fullName])
+        firestoreDB.collection(ProfileCollectionKeys.CollectionKey).document(user.userId!).setData([ProfileCollectionKeys.DisplayNameKey : user.displayName,
+                                                                                                    ProfileCollectionKeys.FullNameKey: user.fullName,
+                                                                                                    ProfileCollectionKeys.EmailKey: user.email,
+                                                                                                    ProfileCollectionKeys.CityKey: user.city,
+                                                                                                    ProfileCollectionKeys.PhotoURLKey: user.photoURL])
             
         { (error) in
             if let error = error {
@@ -107,7 +109,7 @@ final class DBService {
     static public func fetchUser(userId: String, completion: @escaping (Error?, UserProfile?) -> Void) {
         DBService.firestoreDB
             .collection(ProfileCollectionKeys.CollectionKey)
-            .whereField(ProfileCollectionKeys.ProfileIdKey, isEqualTo: userId)
+            .whereField(ProfileCollectionKeys.FullNameKey, isEqualTo: userId)
             .getDocuments { (snapshot, error) in
                 if let error = error {
                     completion(error, nil)
@@ -116,11 +118,11 @@ final class DBService {
                     completion(nil, prayerCreator)
                 }
         }
-}
+    }
     static public func fetchThroneRoomUser(userId: String, completion: @escaping (Error?, UserProfile?) -> Void) {
         DBService.firestoreDB
             .collection(ProfileCollectionKeys.CollectionKey)
-            .whereField(ProfileCollectionKeys.ProfileIdKey, isEqualTo: userId)
+            .whereField(ProfileCollectionKeys.FullNameKey, isEqualTo: userId)
             .getDocuments { (snapshot, error) in
                 if let error = error {
                     completion(error, nil)

@@ -26,21 +26,21 @@ final class AuthService {
     weak var authServiceCreateNewAccountDelegate: AuthServiceCreateNewAccountDelegate?
     weak var authServiceExistingAccountDelegate: AuthServiceExistingAccountDelegate?
     weak var authServiceSignOutDelegate: AuthServiceSignOutDelegate?
-    public func createNewAccount(throneUserName: String, fullName: String, email: String, password: String) {
+    public func createNewAccount(throneUserName: String, fullName: String, city: String, email: String, password: String, photoURL: URL) {
         Auth.auth().createUser(withEmail: email, password: password) { (authDataResult, error) in
             if let error = error {
                 self.authServiceCreateNewAccountDelegate?.didReceiveErrorCreatingAccount(self, error: error)
                 return
             } else if let authDataResult = authDataResult {
                 
-                let request = authDataResult.user.createProfileChangeRequest()
-                request.displayName = "@" + throneUserName
-                request.commitChanges(completion: { (error) in
-                    if let error = error {
-                        self.authServiceCreateNewAccountDelegate?.didReceiveErrorCreatingAccount(self, error: error)
-                        return
-                    }
-                })
+//                let request = authDataResult.user.createProfileChangeRequest()
+//                request.displayName = "@" + throneUserName
+//                request.commitChanges(completion: { (error) in
+//                    if let error = error {
+//                        self.authServiceCreateNewAccountDelegate?.didReceiveErrorCreatingAccount(self, error: error)
+//                        return
+//                    }
+//                })
                 guard let userID = Auth.auth().currentUser?.uid else {return}
                 let myUser = UserProfile(userId: userID, displayName: throneUserName, fullName: fullName, email: email, city: "", photoURL: "")
 //                let throneRoomUser = UserProfile.init(userId: authDataResult.user.uid, displayName: throneUserName, fullName: fullName, email: authDataResult.user.email!, photoURL: "")

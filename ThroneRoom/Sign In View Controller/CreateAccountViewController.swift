@@ -26,6 +26,7 @@ class CreateAccountViewController: UIViewController {
         createView.displayNameTextField.delegate = self
         createView.emailCreatedTextField.delegate = self
         createView.passwordCreatedTextField.delegate = self
+        createView.cityTextField.delegate = self
         hideKeyboardWhenTappingAround()
     }
     
@@ -45,16 +46,16 @@ class CreateAccountViewController: UIViewController {
         //self.createView.createButton.isEnabled = true 
         guard let displayName = createView.displayNameTextField.text,
             let fullName = createView.fullNameTextField.text,
-            let email = createView.emailCreatedTextField.text, let password = createView.passwordCreatedTextField.text
+            let email = createView.emailCreatedTextField.text, let password = createView.passwordCreatedTextField.text, let city = createView.cityTextField.text, let photoURL = URL(string: "www.lovely.com")
             else {
                 showAlert(title: "Error", message: "Create Account Error")
                 return
         }
-        if displayName.isEmpty || fullName.isEmpty || email.isEmpty || password.isEmpty {
+        if displayName.isEmpty || fullName.isEmpty || email.isEmpty || password.isEmpty || city.isEmpty  {
             showAlert(title: "Missing Fields", message: "Please fill out all missing fields")
             self.createView.createButton.isEnabled = false
         } else {
-            authService.createNewAccount(throneUserName: displayName, fullName: fullName, email: email, password: password)
+            authService.createNewAccount(throneUserName: displayName, fullName: fullName, city: city, email: email, password: password, photoURL: photoURL)
         }
     }
 }
