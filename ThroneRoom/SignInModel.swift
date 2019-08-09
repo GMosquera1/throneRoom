@@ -15,7 +15,7 @@ struct UserProfile {
     let fullName: String?
     let email: String?
     let photoURL: String?
-    //let city: String?
+    let city: String?
     //let state: String?
     //let groupName: String?
     //let joinedDate: String?
@@ -27,7 +27,7 @@ struct UserProfile {
         self.fullName = fullName
         self.displayName = displayName
         self.email = email
-//        self.city = city
+        self.city = city
 //        self.state = state
 //        self.groupName = groupName
 //        self.joinedDate = joinedDate
@@ -43,7 +43,7 @@ struct UserProfile {
         self.photoURL = dict[ProfileCollectionKeys.CollectionKey] as? String ?? ""
        // self.groupName = dict[ProfileCollectionKeys.CollectionKey] as? String ?? ""
        // self.joinedDate = dict[ProfileCollectionKeys.CollectionKey] as? String ?? ""
-       // self.city = dict[ProfileCollectionKeys.CollectionKey] as? String ?? ""
+        self.city = dict[ProfileCollectionKeys.CollectionKey] as? String ?? ""
       //  self.state = dict[ProfileCollectionKeys.CollectionKey] as? String ?? ""
         //self.bio = dict[ProfileCollectionKeys.CollectionKey] as? String ?? ""
     }

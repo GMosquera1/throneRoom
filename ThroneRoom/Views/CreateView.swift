@@ -31,6 +31,13 @@ class CreateView: UIView {
         return label
     }()
     
+    var throneRoomUserImageButton: UIButton = {
+        let userImageButton = UIButton()
+        userImageButton.setImage(#imageLiteral(resourceName: "icons8-face-id-32").withRenderingMode(.alwaysOriginal), for: .normal)
+        userImageButton.backgroundColor = #colorLiteral(red: 1, green: 0.907350719, blue: 0.8769339919, alpha: 1)
+        return userImageButton
+    }()
+    
     var emailCreatedTextField: UITextField = {
         let textfield = UITextField()
         textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
@@ -55,7 +62,7 @@ class CreateView: UIView {
         textfield.textColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
         //TODO: find out how to align (Indent) text
         textfield.placeholder = "  Display Name"
-       // textfield.textAlignment
+        // textfield.textAlignment
         return textfield
     }()
     
@@ -68,17 +75,31 @@ class CreateView: UIView {
         // textfield.textAlignment
         return textfield
     }()
+    var cityTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
+        textfield.textColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
+        textfield.placeholder = "  City/ Country"
+        return textfield
+    }()
     
-//    lazy var signInButton: UIButton = {
-//        var button = UIButton()
-//        button.setTitle("Sign In", for: .normal)
-//        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
-//        button.isEnabled = true
-//        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
-//        button.layer.masksToBounds = true
-//        button.layer.cornerRadius = 10
-//        return button
-//    }()
+    
+    //    var cityPicker: UIPickerView = {
+    //       let pickerView = UIPickerView()
+    //
+    //        return pickerView
+    //    }()
+    
+    //    lazy var signInButton: UIButton = {
+    //        var button = UIButton()
+    //        button.setTitle("Sign In", for: .normal)
+    //        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
+    //        button.isEnabled = true
+    //        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+    //        button.layer.masksToBounds = true
+    //        button.layer.cornerRadius = 10
+    //        return button
+    //    }()
     
     lazy var createButton: UIButton = {
         var button = UIButton()
@@ -100,7 +121,7 @@ class CreateView: UIView {
     }()
     
     lazy var accountContainerView: UIStackView = {
-        let accountView = UIStackView(arrangedSubviews: [displayNameTextField, fullNameTextField, emailCreatedTextField, passwordCreatedTextField])
+        let accountView = UIStackView(arrangedSubviews: [displayNameTextField, fullNameTextField, cityTextField, emailCreatedTextField, passwordCreatedTextField])
         accountView.axis = .vertical
         accountView.distribution = .fillEqually
         accountView.spacing = 2
@@ -118,17 +139,25 @@ class CreateView: UIView {
     private func setUpView() {
         backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.addSubview(logo)
+        self.addSubview(throneRoomUserImageButton)
         self.addSubview(stackViewContainer)
         stackViewContainer.addSubview(accountContainerView)
         logo.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.centerY.equalTo(self.snp.centerY).offset(-176)
+            make.centerY.equalTo(self.snp.centerY).offset(-275)
+        }
+        
+        throneRoomUserImageButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY).offset(-125)
+            make.height.equalTo(150)
+            make.width.equalTo(150)
         }
         stackViewContainer.snp.makeConstraints { (make) in
             make.left.equalTo(20)
             make.right.equalTo(-20)
-            make.top.equalTo(logo.snp.bottom).offset(50)
-            make.height.equalTo(200)
+            make.top.equalTo(throneRoomUserImageButton.snp.bottom).offset(30)
+            make.height.equalTo(250)
         }
         accountContainerView.snp.makeConstraints { (make) in
             make.edges.equalTo(stackViewContainer)
@@ -136,7 +165,7 @@ class CreateView: UIView {
         createButton.snp.makeConstraints { (make) in
             make.left.equalTo(130)
             make.right.equalTo(-130)
-            make.top.equalTo(accountContainerView.snp.bottom).offset(60)
+            make.top.equalTo(accountContainerView.snp.bottom).offset(40)
             make.height.equalTo(40)
         }
         
