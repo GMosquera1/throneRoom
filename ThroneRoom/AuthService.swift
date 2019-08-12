@@ -42,7 +42,7 @@ final class AuthService {
 //                    }
 //                })
                 guard let userID = Auth.auth().currentUser?.uid else {return}
-                let myUser = UserProfile(userId: userID, displayName: throneUserName, fullName: fullName, email: email, city: "", photoURL: "")
+                let myUser = UserProfile(userId: userID, displayName: throneUserName, fullName: fullName, email: email, city: city, photoURL: photoURL.absoluteString)
 //                let throneRoomUser = UserProfile.init(userId: authDataResult.user.uid, displayName: throneUserName, fullName: fullName, email: authDataResult.user.email!, photoURL: "")
                 
                 DBService.createThroneRoomUser(user: myUser, completion: { (error) in

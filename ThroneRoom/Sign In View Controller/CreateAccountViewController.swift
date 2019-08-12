@@ -22,7 +22,12 @@ class CreateAccountViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(createView)
         createView.createButton.addTarget(self, action: #selector(createAccount), for: .touchUpInside)
+        
+        let scrreenSize: CGRect = UIScreen.main.bounds
+        let screenWidth = scrreenSize.width
+        let screenHeight = scrreenSize.height
         authService.authServiceCreateNewAccountDelegate = self
+        createView.scrollViewScreen.contentSize = CGSize(width: screenWidth , height: screenHeight)
         createView.displayNameTextField.delegate = self
         createView.emailCreatedTextField.delegate = self
         createView.passwordCreatedTextField.delegate = self

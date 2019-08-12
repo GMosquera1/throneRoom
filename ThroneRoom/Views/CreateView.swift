@@ -21,6 +21,15 @@ class CreateView: UIView {
         commonInit()
     }
     
+    var scrollViewScreen: UIScrollView = {
+        let scrollView = UIScrollView()
+        //scrollView.isScrollEnabled = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .cyan 
+        return scrollView
+        
+    }()
+    
     private var logo: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
@@ -39,7 +48,7 @@ class CreateView: UIView {
     }()
     
     var imageSelectionLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = " Please Select Image (optiona)"
         return label
     }()
@@ -89,24 +98,6 @@ class CreateView: UIView {
         return textfield
     }()
     
-    
-    //    var cityPicker: UIPickerView = {
-    //       let pickerView = UIPickerView()
-    //
-    //        return pickerView
-    //    }()
-    
-    //    lazy var signInButton: UIButton = {
-    //        var button = UIButton()
-    //        button.setTitle("Sign In", for: .normal)
-    //        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
-    //        button.isEnabled = true
-    //        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
-    //        button.layer.masksToBounds = true
-    //        button.layer.cornerRadius = 10
-    //        return button
-    //    }()
-    
     lazy var createButton: UIButton = {
         var button = UIButton()
         button.setTitle("Create Account", for: .normal)
@@ -136,6 +127,7 @@ class CreateView: UIView {
         return accountView
     }()
     private func commonInit(){
+        addSubview(scrollViewScreen)
         addSubview(createButton)
         addSubview(displayNameTextField)
         addSubview(accountContainerView)
@@ -144,19 +136,30 @@ class CreateView: UIView {
     
     private func setUpView() {
         backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.addSubview(scrollViewScreen)
+        //        scrollViewScreen.addSubview(logo)
+        //        scrollViewScreen.addSubview(throneRoomUserImageButton)
+        //        scrollViewScreen.addSubview(imageSelectionLabel)
+        //        scrollViewScreen.addSubview(accountContainerView)
+        //        scrollViewScreen.addSubview(stackViewContainer)
         self.addSubview(logo)
         self.addSubview(throneRoomUserImageButton)
         self.addSubview(imageSelectionLabel)
         self.addSubview(stackViewContainer)
         stackViewContainer.addSubview(accountContainerView)
-        logo.snp.makeConstraints { (make) in
+        
+        scrollViewScreen.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.centerY.equalTo(self.snp.centerY).offset(-300)
+            make.centerY.equalTo(self.snp.centerY)
+        }
+        logo.snp.makeConstraints { (make) in
+            make.centerX.equalTo(scrollViewScreen.snp.centerX)
+            make.centerY.equalTo(scrollViewScreen.snp.centerY).offset(-300)
         }
         
         throneRoomUserImageButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(logo.snp.centerX)
-          //  make.centerY.equalTo(self.snp.centerY).offset(-100)
+            //  make.centerY.equalTo(self.snp.centerY).offset(-100)
             make.top.equalTo(logo.snp.bottom).offset(25)
             make.height.equalTo(150)
             make.width.equalTo(150)
