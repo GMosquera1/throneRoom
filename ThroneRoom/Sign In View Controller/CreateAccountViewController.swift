@@ -22,10 +22,10 @@ class CreateAccountViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(createView)
         createView.createButton.addTarget(self, action: #selector(createAccount), for: .touchUpInside)
-        
-        let scrreenSize: CGRect = UIScreen.main.bounds
-        let screenWidth = scrreenSize.width
-        let screenHeight = scrreenSize.height
+        createView.imageSelectLibraryButton.addTarget(self, action: #selector(selectImage), for: .touchUpInside)
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
         authService.authServiceCreateNewAccountDelegate = self
         createView.scrollViewScreen.contentSize = CGSize(width: screenWidth , height: screenHeight)
         createView.displayNameTextField.delegate = self
@@ -62,6 +62,10 @@ class CreateAccountViewController: UIViewController {
         } else {
             authService.createNewAccount(throneUserName: displayName, fullName: fullName, city: city, email: email, password: password, photoURL: photoURL)
         }
+    }
+    
+    @objc func selectImage() {
+        print("image selected")
     }
 }
 extension CreateAccountViewController: AuthServiceCreateNewAccountDelegate {
