@@ -25,7 +25,7 @@ class CreateView: UIView {
         let scrollView = UIScrollView()
         //scrollView.isScrollEnabled = true
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .cyan 
+        scrollView.backgroundColor = .cyan
         return scrollView
         
     }()
@@ -49,7 +49,7 @@ class CreateView: UIView {
     
     var imageSelectionLabel: UILabel = {
         let label = UILabel()
-        label.text = " Please Select Image (optiona)"
+        label.text = " Please Select Image (optional)"
         return label
     }()
     
