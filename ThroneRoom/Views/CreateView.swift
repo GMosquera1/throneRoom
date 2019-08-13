@@ -26,8 +26,11 @@ class CreateView: UIView {
         //scrollView.isScrollEnabled = true
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .red
+        scrollView.bounces = true
+        scrollView.alwaysBounceVertical = true
+        scrollView.isScrollEnabled = true 
+        scrollView.delaysContentTouches = false
         return scrollView
-        
     }()
     
     private var logo: UILabel = {
@@ -129,7 +132,16 @@ class CreateView: UIView {
         vc.backgroundColor = .clear
         return vc
     }()
-
+    lazy var createAccountContainerView: UIView = {
+        let createContainerView = UIView()
+        createContainerView.layer.cornerRadius = 10
+        createContainerView.layer.masksToBounds = true
+        createContainerView.backgroundColor = .clear
+        createContainerView.isUserInteractionEnabled = true
+        createContainerView.translatesAutoresizingMaskIntoConstraints = false 
+        return createContainerView
+    }()
+    
     lazy var accountContainerView: UIStackView = {
         let accountView = UIStackView(arrangedSubviews: [displayNameTextField, fullNameTextField, cityTextField, emailCreatedTextField, passwordCreatedTextField])
         accountView.axis = .vertical
