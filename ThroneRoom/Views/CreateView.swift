@@ -129,7 +129,7 @@ class CreateView: UIView {
         vc.backgroundColor = .clear
         return vc
     }()
-    
+
     lazy var accountContainerView: UIStackView = {
         let accountView = UIStackView(arrangedSubviews: [displayNameTextField, fullNameTextField, cityTextField, emailCreatedTextField, passwordCreatedTextField])
         accountView.axis = .vertical
@@ -179,13 +179,13 @@ class CreateView: UIView {
             make.width.equalTo(150)
         }
         imageSelectLibraryButton.snp.makeConstraints { (make) in
-            make.centerX.equalTo(throneRoomUserImageButton.snp.centerX).offset(10)
+            make.centerX.equalTo(throneRoomUserImageButton.snp.centerX).offset(20)
             //make.centerY.equalTo(throneRoomUserImageButton.snp.centerY).offset(-10)
             make.top.equalTo(throneRoomUserImageButton.snp.bottom).offset(10)
             
         }
         imageSelectCameraButton.snp.makeConstraints { (make) in
-            make.centerX.equalTo(throneRoomUserImageButton.snp.centerX).offset(-10)
+            make.centerX.equalTo(throneRoomUserImageButton.snp.centerX).offset(-20)
             //make.centerY.equalTo(throneRoomUserImageButton.snp.centerY).offset(-10)
             make.top.equalTo(throneRoomUserImageButton.snp.bottom).offset(10)
             
