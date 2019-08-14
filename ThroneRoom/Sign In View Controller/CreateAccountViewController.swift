@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Toucan
 
 protocol createdAccount {
     func createdAccount(bool: Bool)
@@ -23,6 +24,7 @@ class CreateAccountViewController: UIViewController {
         view.addSubview(createView)
         createView.createButton.addTarget(self, action: #selector(createAccount), for: .touchUpInside)
         createView.imageSelectLibraryButton.addTarget(self, action: #selector(selectImage), for: .touchUpInside)
+        createView.imageSelectCameraButton.addTarget(self, action: #selector(takePhoto), for: .touchUpInside)
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
@@ -67,6 +69,10 @@ class CreateAccountViewController: UIViewController {
     @objc func selectImage() {
         print("image selected")
     }
+    
+    @objc func takePhoto() {
+        print("access camera")
+    }
 }
 extension CreateAccountViewController: AuthServiceCreateNewAccountDelegate {
     func didReceiveErrorCreatingAccount(_ authService: AuthService, error: Error) {
@@ -92,3 +98,18 @@ extension CreateAccountViewController: UITextFieldDelegate {
     }
 }
 
+extension CreateAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let originalImage = info [UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            print("Original image is nil")
+            return
+        }
+        let resizedImage = Toucan.init(image: originalImage).resize(CGSize(width: 500, height: 500))
+        createView.throneRoomUserImageButton.imageView?.image = resizedImage.image
+        dismiss(animated: true)
+    }
+}

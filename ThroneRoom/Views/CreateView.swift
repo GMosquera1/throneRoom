@@ -43,6 +43,17 @@ class CreateView: UIView {
         return label
     }()
     
+    var imagePickerController: UIImagePickerController = {
+        let pickerController = UIImagePickerController()
+        //pickerController.delegate = self
+        pickerController.allowsEditing = true
+        pickerController.mediaTypes = ["public.image", "public.movie"]
+        pickerController.sourceType = .camera
+        return pickerController
+    }()
+    
+    
+    
     var throneRoomUserImageButton: UIButton = {
         let userImageButton = UIButton()
         userImageButton.setImage(#imageLiteral(resourceName: "icons8-face-id-32").withRenderingMode(.alwaysOriginal), for: .normal)
