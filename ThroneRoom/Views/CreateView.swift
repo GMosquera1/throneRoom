@@ -21,15 +21,18 @@ class CreateView: UIView {
         commonInit()
     }
     
+
+    
     var scrollViewScreen: UIScrollView = {
         let scrollView = UIScrollView()
         //scrollView.isScrollEnabled = true
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
+       // scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .red
-        scrollView.bounces = true
-        scrollView.alwaysBounceVertical = true
-        scrollView.isScrollEnabled = true 
-        scrollView.delaysContentTouches = false
+        //scrollView.bounces = true
+        //scrollView.alwaysBounceVertical = true
+        //scrollView.isScrollEnabled = true
+        //scrollView.delaysContentTouches = false
+        //scrollView.contentSize.height = 2000
         return scrollView
     }()
     
@@ -37,7 +40,7 @@ class CreateView: UIView {
         let label = UILabel()
         label.backgroundColor = .clear
         label.text = "T H R O N E   R O O M"
-        label.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         label.font = UIFont(name: "Futura", size: 30)
         label.textAlignment = .center
         return label
@@ -48,22 +51,22 @@ class CreateView: UIView {
         //pickerController.delegate = self
         pickerController.allowsEditing = true
         pickerController.mediaTypes = ["public.image", "public.movie"]
-        pickerController.sourceType = .camera
+        pickerController.sourceType = .photoLibrary
         return pickerController
     }()
     
     
     
-    var throneRoomUserImageButton: UIButton = {
-        let userImageButton = UIButton()
-        userImageButton.setImage(#imageLiteral(resourceName: "icons8-face-id-32").withRenderingMode(.alwaysOriginal), for: .normal)
-        userImageButton.backgroundColor = #colorLiteral(red: 1, green: 0.907350719, blue: 0.8769339919, alpha: 1)
-        return userImageButton
+    var throneRoomUserImage: UIImageView = {
+        let userImage = UIImageView()
+        userImage.image = #imageLiteral(resourceName: "versePlaceHolder")
+        userImage.backgroundColor = #colorLiteral(red: 1, green: 0.907350719, blue: 0.8769339919, alpha: 1)
+        return userImage
     }()
     
     var imageSelectCameraButton: UIButton = {
         var button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "icons8-face-id-32"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "icons8-camera-32"), for: .normal)
         button.backgroundColor = #colorLiteral(red: 1, green: 0.8934749961, blue: 0.8764544129, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
@@ -72,7 +75,7 @@ class CreateView: UIView {
     }()
     var imageSelectLibraryButton: UIButton = {
         var button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "icons8-literature-32"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "icons8-camera-32"), for: .normal)
         button.backgroundColor = #colorLiteral(red: 1, green: 0.8934749961, blue: 0.8764544129, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
@@ -164,37 +167,57 @@ class CreateView: UIView {
     }()
     private func commonInit(){
         addSubview(scrollViewScreen)
-        addSubview(createButton)
-        addSubview(displayNameTextField)
-        addSubview(accountContainerView)
-        setUpView()
+        scrollViewScreen.translatesAutoresizingMaskIntoConstraints = false
+        scrollViewScreen.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        scrollViewScreen.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        scrollViewScreen.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        scrollViewScreen.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+      // addSubview(scrollViewScreen)
+//        addSubview(createButton)
+//        addSubview(displayNameTextField)
+//        addSubview(accountContainerView)
+       setUpView()
     }
     
+    
+    
     private func setUpView() {
-        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(scrollViewScreen)
-//                scrollViewScreen.addSubview(logo)
-//                scrollViewScreen.addSubview(throneRoomUserImageButton)
-//                scrollViewScreen.addSubview(imageSelectionButton)
+    
+        scrollViewScreen.addSubview(logo)
+        scrollViewScreen.addSubview(throneRoomUserImage)
+        scrollViewScreen.addSubview(imageSelectCameraButton)
+        scrollViewScreen.addSubview(imageSelectLibraryButton)
+        //scrollViewScreen.addSubview(stackViewContainer)
+        
+       //stackViewContainer.addSubview(accountContainerView)
+   //     stackViewContainer.addSubview(accountContainerView)
+//        logo.translatesAutoresizingMaskIntoConstraints = false
+//        logo.topAnchor.constraint(equalToSystemSpacingBelow: scrollViewScreen.topAnchor, multiplier: 0.5).isActive = true
+//        logo.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor).isActive = true
+//        logo.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1).isActive = true
+//        logo.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor, multiplier: 0.5).isActive = true
+//                scrollViewScreen.addSubview(throneRoomUserImage)
+//        scrollViewScreen.addSubview(imageSelectCameraButton)
 //                scrollViewScreen.addSubview(accountContainerView)
 //                scrollViewScreen.addSubview(stackViewContainer)
-        self.addSubview(logo)
-        self.addSubview(throneRoomUserImageButton)
-        self.addSubview(imageSelectCameraButton)
-        self.addSubview(imageSelectLibraryButton)
-        self.addSubview(stackViewContainer)
-        stackViewContainer.addSubview(accountContainerView)
+//        self.addSubview(logo)
+//        self.addSubview(throneRoomUserImage)
+//        self.addSubview(imageSelectCameraButton)
+//        self.addSubview(imageSelectLibraryButton)
+//        self.addSubview(stackViewContainer)
+//        stackViewContainer.addSubview(accountContainerView)
         
-        scrollViewScreen.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.snp.centerX)
-            make.centerY.equalTo(self.snp.centerY)
-        }
+//        scrollViewScreen.snp.makeConstraints { (make) in
+//            make.centerX.equalTo(self.snp.centerX)
+//            make.centerY.equalTo(self.snp.centerY)
+//        }
         logo.snp.makeConstraints { (make) in
-            make.centerX.equalTo(scrollViewScreen.snp.centerX)
-            make.centerY.equalTo(scrollViewScreen.snp.centerY).offset(-300)
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY).offset(-300)
         }
         
-        throneRoomUserImageButton.snp.makeConstraints { (make) in
+        throneRoomUserImage.snp.makeConstraints { (make) in
             make.centerX.equalTo(logo.snp.centerX)
             //  make.centerY.equalTo(self.snp.centerY).offset(-100)
             make.top.equalTo(logo.snp.bottom).offset(25)
@@ -202,32 +225,32 @@ class CreateView: UIView {
             make.width.equalTo(150)
         }
         imageSelectLibraryButton.snp.makeConstraints { (make) in
-            make.centerX.equalTo(throneRoomUserImageButton.snp.centerX).offset(20)
+            make.centerX.equalTo(throneRoomUserImage.snp.centerX).offset(20)
             //make.centerY.equalTo(throneRoomUserImageButton.snp.centerY).offset(-10)
-            make.top.equalTo(throneRoomUserImageButton.snp.bottom).offset(10)
-            
+            make.top.equalTo(throneRoomUserImage.snp.bottom).offset(10)
+
         }
         imageSelectCameraButton.snp.makeConstraints { (make) in
-            make.centerX.equalTo(throneRoomUserImageButton.snp.centerX).offset(-20)
+            make.centerX.equalTo(throneRoomUserImage.snp.centerX).offset(-20)
             //make.centerY.equalTo(throneRoomUserImageButton.snp.centerY).offset(-10)
-            make.top.equalTo(throneRoomUserImageButton.snp.bottom).offset(10)
-            
+            make.top.equalTo(throneRoomUserImage.snp.bottom).offset(10)
+
         }
-        stackViewContainer.snp.makeConstraints { (make) in
-            make.left.equalTo(20)
-            make.right.equalTo(-20)
-            make.top.equalTo(imageSelectLibraryButton.snp.bottom).offset(10)
-            make.height.equalTo(250)
-        }
-        accountContainerView.snp.makeConstraints { (make) in
-            make.edges.equalTo(stackViewContainer)
-        }
-        createButton.snp.makeConstraints { (make) in
-            make.left.equalTo(130)
-            make.right.equalTo(-130)
-            make.top.equalTo(accountContainerView.snp.bottom).offset(40)
-            make.height.equalTo(40)
-        }
+//        stackViewContainer.snp.makeConstraints { (make) in
+//            make.left.equalTo(10)
+//            make.right.equalTo(-100)
+//            make.top.equalTo(imageSelectLibraryButton.snp.bottom).offset(10)
+//            make.height.equalTo(200)
+//        }
+//        accountContainerView.snp.makeConstraints { (make) in
+//            make.edges.equalTo(stackViewContainer)
+//        }
+//        createButton.snp.makeConstraints { (make) in
+//            make.left.equalTo(130)
+//            make.right.equalTo(-130)
+//            make.top.equalTo(accountContainerView.snp.bottom).offset(40)
+//            make.height.equalTo(40)
+//        }
         
     }
     

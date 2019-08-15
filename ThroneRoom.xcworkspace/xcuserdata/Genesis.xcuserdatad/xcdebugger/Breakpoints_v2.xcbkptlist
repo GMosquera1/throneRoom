@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/SignInViewController.swift"
-            timestampString = "587415166.801719"
+            timestampString = "587585954.921137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/SignInViewController.swift"
-            timestampString = "587415166.80179"
+            timestampString = "587585954.921192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/CreateAccountViewController.swift"
-            timestampString = "587417031.876601"
+            timestampString = "587585954.9212331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "createAccount()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/CreateAccountViewController.swift"
-            timestampString = "587417031.881168"
+            timestampString = "587585954.921271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "signInView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/CreateAccountViewController.swift"
-            timestampString = "587417031.8814369"
+            timestampString = "587585954.9213049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "signInView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThroneRoom/Sign In View Controller/CreateAccountViewController.swift"
-            timestampString = "587417031.8816431"
+            timestampString = "587585954.921338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "CreateAccountViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -161,6 +161,129 @@
             endingLineNumber = "44"
             landmarkName = "createNewAccount(throneUserName:fullName:city:email:password:photoURL:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThroneRoom/Views/CreateView.swift"
+            timestampString = "587585954.921416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "scrollViewScreen"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThroneRoom.CreateView.init(frame: __C.CGRect) -&gt; ThroneRoom.CreateView"
+                  moduleName = "ThroneRoom"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Genesis/Desktop/ThroneRoom/ThroneRoom/Views/CreateView.swift"
+                  timestampString = "587582794.476784"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThroneRoom.CreateView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ThroneRoom.CreateView&gt;"
+                  moduleName = "ThroneRoom"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Genesis/Desktop/ThroneRoom/ThroneRoom/Views/CreateView.swift"
+                  timestampString = "587582794.552664"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.UIScrollView in variable initialization expression of ThroneRoom.CreateView.scrollViewScreen : __C.UIScrollView"
+                  moduleName = "ThroneRoom"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Genesis/Desktop/ThroneRoom/ThroneRoom/Views/CreateView.swift"
+                  timestampString = "587582794.554672"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "14">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThroneRoom.CreateView.scrollViewScreen.getter : __C.UIScrollView"
+                  moduleName = "ThroneRoom"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Genesis/Desktop/ThroneRoom/ThroneRoom/Views/CreateView.swift"
+                  timestampString = "587582794.5562789"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThroneRoom.CreateView.scrollViewScreen.setter : __C.UIScrollView"
+                  moduleName = "ThroneRoom"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Genesis/Desktop/ThroneRoom/ThroneRoom/Views/CreateView.swift"
+                  timestampString = "587582794.557784"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThroneRoom.CreateView.scrollViewScreen.modify : __C.UIScrollView"
+                  moduleName = "ThroneRoom"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Genesis/Desktop/ThroneRoom/ThroneRoom/Views/CreateView.swift"
+                  timestampString = "587582794.559284"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThroneRoom.CreateView.scrollViewScreen.modify : __C.UIScrollView with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ThroneRoom"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Genesis/Desktop/ThroneRoom/ThroneRoom/Views/CreateView.swift"
+                  timestampString = "587582794.560807"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

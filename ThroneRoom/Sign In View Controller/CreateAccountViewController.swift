@@ -29,12 +29,17 @@ class CreateAccountViewController: UIViewController {
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
         authService.authServiceCreateNewAccountDelegate = self
-        createView.scrollViewScreen.contentSize = CGSize(width: screenWidth , height: screenHeight)
+//        createView.scrollViewScreen.contentSize = CGSize(width: screenWidth , height: screenHeight)
         createView.displayNameTextField.delegate = self
         createView.emailCreatedTextField.delegate = self
         createView.passwordCreatedTextField.delegate = self
         createView.cityTextField.delegate = self
         hideKeyboardWhenTappingAround()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        createView.scrollViewScreen.contentSize.height = 2000
     }
     
     @objc func signInView() {
@@ -109,7 +114,7 @@ extension CreateAccountViewController: UIImagePickerControllerDelegate, UINaviga
             return
         }
         let resizedImage = Toucan.init(image: originalImage).resize(CGSize(width: 500, height: 500))
-        createView.throneRoomUserImageButton.imageView?.image = resizedImage.image
+        createView.throneRoomUserImage.image = resizedImage.image
         dismiss(animated: true)
     }
 }
