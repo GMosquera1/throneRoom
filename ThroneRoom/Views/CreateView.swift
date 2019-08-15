@@ -188,15 +188,15 @@ class CreateView: UIView {
         scrollViewScreen.addSubview(throneRoomUserImage)
         scrollViewScreen.addSubview(imageSelectCameraButton)
         scrollViewScreen.addSubview(imageSelectLibraryButton)
-        //scrollViewScreen.addSubview(stackViewContainer)
+        scrollViewScreen.addSubview(stackViewContainer)
         
-       //stackViewContainer.addSubview(accountContainerView)
+       stackViewContainer.addSubview(accountContainerView)
    //     stackViewContainer.addSubview(accountContainerView)
-//        logo.translatesAutoresizingMaskIntoConstraints = false
-//        logo.topAnchor.constraint(equalToSystemSpacingBelow: scrollViewScreen.topAnchor, multiplier: 0.5).isActive = true
-//        logo.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor).isActive = true
-//        logo.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1).isActive = true
-//        logo.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor, multiplier: 0.5).isActive = true
+        logo.translatesAutoresizingMaskIntoConstraints = false
+        logo.topAnchor.constraint(equalToSystemSpacingBelow: scrollViewScreen.topAnchor, multiplier: 0.5).isActive = true
+        logo.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor).isActive = true
+        logo.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1).isActive = true
+        logo.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor).isActive = true
 //                scrollViewScreen.addSubview(throneRoomUserImage)
 //        scrollViewScreen.addSubview(imageSelectCameraButton)
 //                scrollViewScreen.addSubview(accountContainerView)
@@ -212,18 +212,22 @@ class CreateView: UIView {
 //            make.centerX.equalTo(self.snp.centerX)
 //            make.centerY.equalTo(self.snp.centerY)
 //        }
-        logo.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.snp.centerX)
-            make.centerY.equalTo(self.snp.centerY).offset(-300)
-        }
+//        logo.snp.makeConstraints { (make) in
+//            make.centerX.equalTo(self.snp.centerX)
+//            make.centerY.equalTo(self.snp.centerY).offset(-300)
+//        }
+//
+        throneRoomUserImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([throneRoomUserImage.topAnchor.constraint(equalToSystemSpacingBelow: logo.bottomAnchor, multiplier: 0.4), throneRoomUserImage.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor), throneRoomUserImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2), throneRoomUserImage.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor, multiplier: 0.35)])
         
-        throneRoomUserImage.snp.makeConstraints { (make) in
-            make.centerX.equalTo(logo.snp.centerX)
-            //  make.centerY.equalTo(self.snp.centerY).offset(-100)
-            make.top.equalTo(logo.snp.bottom).offset(25)
-            make.height.equalTo(150)
-            make.width.equalTo(150)
-        }
+        
+//        throneRoomUserImage.snp.makeConstraints { (make) in
+//            make.centerX.equalTo(logo.snp.centerX)
+//            //  make.centerY.equalTo(self.snp.centerY).offset(-100)
+//            make.top.equalTo(logo.snp.bottom).offset(25)
+//            make.height.equalTo(150)
+//            make.width.equalTo(150)
+//        }
         imageSelectLibraryButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(throneRoomUserImage.snp.centerX).offset(20)
             //make.centerY.equalTo(throneRoomUserImageButton.snp.centerY).offset(-10)
@@ -236,15 +240,15 @@ class CreateView: UIView {
             make.top.equalTo(throneRoomUserImage.snp.bottom).offset(10)
 
         }
-//        stackViewContainer.snp.makeConstraints { (make) in
-//            make.left.equalTo(10)
-//            make.right.equalTo(-100)
-//            make.top.equalTo(imageSelectLibraryButton.snp.bottom).offset(10)
-//            make.height.equalTo(200)
-//        }
-//        accountContainerView.snp.makeConstraints { (make) in
-//            make.edges.equalTo(stackViewContainer)
-//        }
+        stackViewContainer.snp.makeConstraints { (make) in
+            make.left.equalTo(10)
+            make.right.equalTo(-100)
+            make.top.equalTo(imageSelectLibraryButton.snp.bottom).offset(10)
+            make.height.equalTo(200)
+        }
+        accountContainerView.snp.makeConstraints { (make) in
+            make.edges.equalTo(stackViewContainer)
+        }
 //        createButton.snp.makeConstraints { (make) in
 //            make.left.equalTo(130)
 //            make.right.equalTo(-130)

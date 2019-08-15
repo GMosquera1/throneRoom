@@ -39,7 +39,7 @@ class CreateAccountViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        createView.scrollViewScreen.contentSize.height = 2000
+        createView.scrollViewScreen.contentSize.height = 1000
     }
     
     @objc func signInView() {
