@@ -88,7 +88,10 @@ class SignInView: UIView {
         accountView.layer.cornerRadius = 10
         return accountView
     }()
-    
+    private var tapGesture: UITapGestureRecognizer = {
+       let tapGestureRecognizer = UITapGestureRecognizer()
+        return tapGestureRecognizer
+    }()
     
     private var accountLoginState = AccountLoginState.newAccount
     
