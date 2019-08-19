@@ -156,6 +156,32 @@ class SignInView: UIView {
 //        self.navigationController?.pushViewController(homeViewController, animated: true)
         
         delegate?.didSelectSignInButton(self, accountLoginState: accountLoginState)
+        let homeViewController = HomeViewController()
+        let bibleViewController = BibleViewController()
+        let prayerViewController = PrayerViewController()
+        let praiseJournalViewController = PraiseJournalViewController()
+        
+        let tabBar = UITabBarController()
+        tabBar.tabBar.barTintColor = UIColor.white
+        
+        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "icons8-home-page-32"), tag: 0)
+        let homeViewControllerNavigation = UINavigationController.init(rootViewController: homeViewController)
+        
+        
+        let bibleViewControllerNavigation = UINavigationController.init(rootViewController: bibleViewController)
+        bibleViewController.tabBarItem = UITabBarItem(title: "Bible"
+            , image: #imageLiteral(resourceName: "icons8-literature-32") , tag: 1)
+        
+        let prayerViewControllerNavigation = UINavigationController.init(rootViewController: prayerViewController)
+        prayerViewController.tabBarItem = UITabBarItem(title: "Prayer", image: #imageLiteral(resourceName: "icons8-pray-32-2"), tag: 2)
+        
+        let praiseJournalViewControllerNavigation = UINavigationController(rootViewController: praiseJournalViewController)
+        praiseJournalViewController.tabBarItem = UITabBarItem(title: "Praise", image: #imageLiteral(resourceName: "icons8-heart-32-2"), tag: 3)
+        
+        tabBar.viewControllers = [homeViewController, UINavigationController(rootViewController: bibleViewController), UINavigationController(rootViewController: prayerViewController), UINavigationController(rootViewController: praiseJournalViewController) ]
+//
+//        launchScreenViewController.present(tabBar, animated: true, completion: nil)
+//         self.navigationController?.pushViewController(tabBar, animated: true) 
     }
     
     
