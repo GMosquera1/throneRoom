@@ -83,7 +83,7 @@ class CreateView: UIView {
     }()
     var imageSelectLibraryButton: UIButton = {
         var button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "icons8-camera-32"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "icons8-literature-32"), for: .normal)
         button.backgroundColor = #colorLiteral(red: 1, green: 0.8934749961, blue: 0.8764544129, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
@@ -167,7 +167,7 @@ class CreateView: UIView {
     lazy var accountContainerView: UIStackView = {
         let accountView = UIStackView(arrangedSubviews: [displayNameTextField, fullNameTextField, cityTextField, emailCreatedTextField, passwordCreatedTextField])
         accountView.axis = .vertical
-        accountView.distribution = .fill
+        accountView.distribution = .fillEqually
         accountView.spacing = 2
         accountView.layer.masksToBounds = true
         accountView.layer.cornerRadius = 10
@@ -190,8 +190,10 @@ class CreateView: UIView {
         scrollViewScreen.addSubview(imageSelectCameraButton)
         scrollViewScreen.addSubview(imageSelectLibraryButton)
         scrollViewScreen.addSubview(stackViewContainer)
+        scrollViewScreen.addSubview(createButton)
         
         stackViewContainer.addSubview(accountContainerView)
+        
         
         logo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([ logo.topAnchor.constraint(equalToSystemSpacingBelow: scrollViewScreen.topAnchor, multiplier: 0.5),
@@ -202,17 +204,17 @@ class CreateView: UIView {
         NSLayoutConstraint.activate([throneRoomUserImage.topAnchor.constraint(equalToSystemSpacingBelow: logo.bottomAnchor, multiplier: 0.4), throneRoomUserImage.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor), throneRoomUserImage.heightAnchor.constraint(equalTo: throneRoomUserImage.widthAnchor), throneRoomUserImage.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor, multiplier: 0.5)])
         
         imageSelectLibraryButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([imageSelectLibraryButton.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor), imageSelectLibraryButton.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor)
+        NSLayoutConstraint.activate([imageSelectLibraryButton.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor), imageSelectLibraryButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20), imageSelectLibraryButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
             ])
 
         imageSelectCameraButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([imageSelectCameraButton.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor), imageSelectCameraButton.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor, constant: 15)
+        NSLayoutConstraint.activate([imageSelectCameraButton.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor), imageSelectCameraButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40)
             ])
         
-        
+        //imageSelectCameraButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40)
         stackViewContainer.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([stackViewContainer.topAnchor.constraint(equalTo: imageSelectLibraryButton.bottomAnchor, constant: 5),stackViewContainer.heightAnchor.constraint(equalTo: scrollViewScreen.heightAnchor, multiplier: 0.75)])
+        //stackViewContainer.topAnchor.constraint(equalTo: imageSelectLibraryButton.bottomAnchor, constant: 5)
+        NSLayoutConstraint.activate([stackViewContainer.topAnchor.constraint(equalTo: imageSelectLibraryButton.bottomAnchor, constant: 5),stackViewContainer.heightAnchor.constraint(equalTo: scrollViewScreen.heightAnchor, multiplier: 0.75), stackViewContainer.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor, multiplier: 0.90), stackViewContainer.leadingAnchor.constraint(equalTo: leadingAnchor), stackViewContainer.trailingAnchor.constraint(equalTo: trailingAnchor)])
 //        stackViewContainer.snp.makeConstraints { (make) in
 //            make.left.equalTo(10)
 //            make.right.equalTo(-100)
@@ -223,6 +225,9 @@ class CreateView: UIView {
         
         NSLayoutConstraint.activate([accountContainerView.centerXAnchor.constraint(equalTo: stackViewContainer.centerXAnchor), accountContainerView.centerYAnchor.constraint(equalTo: stackViewContainer.centerYAnchor)])
         
+        createButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([createButton.centerYAnchor.constraint(equalTo: centerYAnchor), createButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10), createButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)])
         
     }
     

@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import SnapKit
 
 class HomeView: UIView {
-
+    
     public lazy var verseImage: UIImageView = {
         let image = UIImageView(image: #imageLiteral(resourceName: "versePlaceHolder"))
         image.contentMode = .scaleToFill
@@ -27,7 +26,7 @@ class HomeView: UIView {
         textView.isEditable = false
         return textView
     }()
-
+    
     public lazy var announcements: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
@@ -38,17 +37,17 @@ class HomeView: UIView {
         textView.isEditable = false
         return textView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-
+    
     func commonInit() {
         SetConstraints()
     }
@@ -56,27 +55,21 @@ class HomeView: UIView {
         addSubview(verseImage)
         addSubview(announcements)
         addSubview(announcementsField)
-
+        
         verseImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([verseImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15), verseImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -450), verseImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15), verseImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)])
         announcements.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([announcements.topAnchor.constraint(equalTo: verseImage.bottomAnchor, constant: 5), announcements.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15), announcements.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15), announcements.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)])
         announcementsField.translatesAutoresizingMaskIntoConstraints = false
-
-        verseImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
-        verseImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -450).isActive = true
-        verseImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
-        verseImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
         
         
-        announcements.topAnchor.constraint(equalTo: verseImage.bottomAnchor, constant: 5).isActive = true
-        announcements.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
-        announcements.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
-        announcements.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05).isActive = true
+        NSLayoutConstraint.activate([announcementsField.topAnchor.constraint(equalTo: announcements.bottomAnchor), announcementsField.leadingAnchor.constraint(equalTo: announcements.leadingAnchor),
+                                     announcementsField.trailingAnchor.constraint(equalTo: announcements.trailingAnchor),
+                                     announcementsField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)])
         
-        announcementsField.topAnchor.constraint(equalTo: announcements.bottomAnchor).isActive = true
-        announcementsField.leadingAnchor.constraint(equalTo: announcements.leadingAnchor).isActive = true
-        announcementsField.trailingAnchor.constraint(equalTo: announcements.trailingAnchor).isActive = true
-    announcementsField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05).isActive = true
-
+        
+        
     }
     
 }
