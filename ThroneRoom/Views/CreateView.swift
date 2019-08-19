@@ -175,10 +175,10 @@ class CreateView: UIView {
     }()
     
     lazy var buttonStackView: UIStackView = {
-        let buttonView = UIStackView()
-        buttonView.axis = .vertical
+        let buttonView = UIStackView(arrangedSubviews: [imageSelectCameraButton, imageSelectLibraryButton])
+        buttonView.axis = .horizontal
         buttonView.distribution = .fillEqually
-        buttonView.spacing = 2
+        //buttonView.spacing = 2
         buttonView.layer.masksToBounds = true
         buttonView.layer.cornerRadius = 10
         return buttonView
@@ -235,7 +235,7 @@ class CreateView: UIView {
       
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([buttonStackView.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor), buttonStackView.leadingAnchor.constraint(equalTo: scrollViewScreen.leadingAnchor), buttonStackView.trailingAnchor.constraint(equalTo: scrollViewScreen.trailingAnchor) ])
+        NSLayoutConstraint.activate([buttonStackView.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor, constant: 150), buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100) ])
         accountContainerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([accountContainerView.centerXAnchor.constraint(equalTo: stackViewContainer.centerXAnchor), accountContainerView.centerYAnchor.constraint(equalTo: stackViewContainer.centerYAnchor)])
