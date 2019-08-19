@@ -146,9 +146,17 @@ class SignInView: UIView {
             make.right.equalTo(-120)
         }
        
+        signInButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
+        
     }
-    
-    
+    @objc func signInButtonPressed() {
+        print("I'm signing in")
+        /// TO-DO log in should redirect to homescreen
+//        let homeViewController = HomeViewController()
+//        self.navigationController?.pushViewController(homeViewController, animated: true)
+        
+        delegate?.didSelectSignInButton(self, accountLoginState: accountLoginState)
+    }
     
     
 }

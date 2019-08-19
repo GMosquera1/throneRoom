@@ -33,6 +33,7 @@
 		059F171C22B7129E00289503 /* YouVersionVerseDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171B22B7129E00289503 /* YouVersionVerseDayModel.swift */; };
 		059F171E22B717F900289503 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F171D22B717F900289503 /* HomeView.swift */; };
 		059F172022B71BB900289503 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 059F171F22B71BB900289503 /* Notes.rtf */; };
+		05B4F82A230B222F007E7426 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4F829230B222F007E7426 /* UserSession.swift */; };
 		05E2342122B96D8A005B096D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342022B96D8A005B096D /* SignInViewController.swift */; };
 		05E2342422B96DBF005B096D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342322B96DBF005B096D /* CreateAccountViewController.swift */; };
 		05E2342622B96DD7005B096D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2342522B96DD7005B096D /* SignInView.swift */; };
@@ -73,6 +74,7 @@
 		059F171B22B7129E00289503 /* YouVersionVerseDayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouVersionVerseDayModel.swift; sourceTree = "<group>"; };
 		059F171D22B717F900289503 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		059F171F22B71BB900289503 /* Notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
+		05B4F829230B222F007E7426 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		05E2342022B96D8A005B096D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		05E2342322B96DBF005B096D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		05E2342522B96DD7005B096D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				059F16FC22B1580F00289503 /* Info.plist */,
 				0588910E22B95DA4002B53E0 /* GoogleService-Info.plist */,
 				059F171B22B7129E00289503 /* YouVersionVerseDayModel.swift */,
+				05B4F829230B222F007E7426 /* UserSession.swift */,
 			);
 			path = ThroneRoom;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				059F171822B7119300289503 /* NetworkHelper.swift in Sources */,
 				05E2342822B96DE2005B096D /* CreateView.swift in Sources */,
 				05E2342122B96D8A005B096D /* SignInViewController.swift in Sources */,
+				05B4F82A230B222F007E7426 /* UserSession.swift in Sources */,
 				059F171122B6F5EC00289503 /* BibleView.swift in Sources */,
 				0528C46722F33983002248B9 /* Date+Extensions.swift in Sources */,
 				059F170722B6F50600289503 /* PraiseJournalViewController.swift in Sources */,

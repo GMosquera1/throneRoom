@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 
-
 class SignInViewController: UIViewController {
 
     var signInView = SignInView()
@@ -23,11 +22,9 @@ class SignInViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
 
     }
-    
-    
     func accountButtons() {
 //        signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
-        signInView.signInButton.addTarget(self, action: #selector(signInExistingButton), for: .touchUpInside)
+//        signInView.signInButton.addTarget(self, action: #selector(signInExistingButton), for: .touchUpInside)
         signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
     }
     @objc func createAccountButton(){
@@ -36,12 +33,10 @@ class SignInViewController: UIViewController {
         self.navigationController?.pushViewController(createAccountViewController, animated: true)
     
     }
-    @objc func signInExistingButton() {
-        print("I'm signing in")
-        /// TO-DO log in should redirect to homescreen 
+//    @objc func signInExistingButton() {
+//        print("I'm signing in")
+//        /// TO-DO log in should redirect to homescreen
 //        let homeViewController = HomeViewController()
 //        self.navigationController?.pushViewController(homeViewController, animated: true)
-        
-        
-    }
+//    }
 }
