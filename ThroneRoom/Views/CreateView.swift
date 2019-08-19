@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class CreateView: UIView {
     
@@ -168,7 +167,7 @@ class CreateView: UIView {
     lazy var accountContainerView: UIStackView = {
         let accountView = UIStackView(arrangedSubviews: [displayNameTextField, fullNameTextField, cityTextField, emailCreatedTextField, passwordCreatedTextField])
         accountView.axis = .vertical
-        accountView.distribution = .fillProportionally
+        accountView.distribution = .fill
         accountView.spacing = 2
         accountView.layer.masksToBounds = true
         accountView.layer.cornerRadius = 10
@@ -177,15 +176,8 @@ class CreateView: UIView {
     private func commonInit(){
         addSubview(scrollViewScreen)
         scrollViewScreen.translatesAutoresizingMaskIntoConstraints = false
-        scrollViewScreen.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        scrollViewScreen.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        scrollViewScreen.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        scrollViewScreen.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        NSLayoutConstraint.activate([scrollViewScreen.topAnchor.constraint(equalTo: topAnchor), scrollViewScreen.leadingAnchor.constraint(equalTo: leadingAnchor), scrollViewScreen.trailingAnchor.constraint(equalTo: trailingAnchor), scrollViewScreen.bottomAnchor.constraint(equalTo: bottomAnchor)])
         
-        // addSubview(scrollViewScreen)
-        //        addSubview(createButton)
-        //        addSubview(displayNameTextField)
-        //        addSubview(accountContainerView)
         setUpView()
     }
     
@@ -200,83 +192,37 @@ class CreateView: UIView {
         scrollViewScreen.addSubview(stackViewContainer)
         
         stackViewContainer.addSubview(accountContainerView)
-        //     stackViewContainer.addSubview(accountContainerView)
+        
         logo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([ logo.topAnchor.constraint(equalToSystemSpacingBelow: scrollViewScreen.topAnchor, multiplier: 0.5),
                                       logo.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor),
                                       logo.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1),
                                       logo.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor)])
-        //                scrollViewScreen.addSubview(throneRoomUserImage)
-        //        scrollViewScreen.addSubview(imageSelectCameraButton)
-        //                scrollViewScreen.addSubview(accountContainerView)
-        //                scrollViewScreen.addSubview(stackViewContainer)
-        //        self.addSubview(logo)
-        //        self.addSubview(throneRoomUserImage)
-        //        self.addSubview(imageSelectCameraButton)
-        //        self.addSubview(imageSelectLibraryButton)
-        //        self.addSubview(stackViewContainer)
-        //        stackViewContainer.addSubview(accountContainerView)
-        
-        //        scrollViewScreen.snp.makeConstraints { (make) in
-        //            make.centerX.equalTo(self.snp.centerX)
-        //            make.centerY.equalTo(self.snp.centerY)
-        //        }
-        //        logo.snp.makeConstraints { (make) in
-        //            make.centerX.equalTo(self.snp.centerX)
-        //            make.centerY.equalTo(self.snp.centerY).offset(-300)
-        //        }
-        //
         throneRoomUserImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([throneRoomUserImage.topAnchor.constraint(equalToSystemSpacingBelow: logo.bottomAnchor, multiplier: 0.4), throneRoomUserImage.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor), throneRoomUserImage.heightAnchor.constraint(equalTo: throneRoomUserImage.widthAnchor), throneRoomUserImage.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor, multiplier: 0.5)])
         
-        
-        //        throneRoomUserImage.snp.makeConstraints { (make) in
-        //            make.centerX.equalTo(logo.snp.centerX)
-        //            //  make.centerY.equalTo(self.snp.centerY).offset(-100)
-        //            make.top.equalTo(logo.snp.bottom).offset(25)
-        //            make.height.equalTo(150)
-        //            make.width.equalTo(150)
-        //        }
-        
         imageSelectLibraryButton.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([imageSelectLibraryButton.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor), imageSelectLibraryButton.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor)
             ])
-        //        imageSelectLibraryButton.snp.makeConstraints { (make) in
-        //            make.centerX.equalTo(throneRoomUserImage.snp.centerX).offset(20)
-        //            //make.centerY.equalTo(throneRoomUserImageButton.snp.centerY).offset(-10)
-        //            make.top.equalTo(throneRoomUserImage.snp.bottom).offset(10)
-        //
-        //        }
-        
+
         imageSelectCameraButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([imageSelectCameraButton.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor), imageSelectCameraButton.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor, constant: 15)
             ])
         
-        //        imageSelectCameraButton.snp.makeConstraints { (make) in
-        //            make.centerX.equalTo(throneRoomUserImage.snp.centerX).offset(-20)
-        //            //make.centerY.equalTo(throneRoomUserImageButton.snp.centerY).offset(-10)
-        //            make.top.equalTo(throneRoomUserImage.snp.bottom).offset(10)
-        //
-        //        }
         
-        stackViewContainer.translatesAutoresizingMaskIntoConstraints = false 
+        stackViewContainer.translatesAutoresizingMaskIntoConstraints = false
         
-        stackViewContainer.snp.makeConstraints { (make) in
-            make.left.equalTo(10)
-            make.right.equalTo(-100)
-            make.top.equalTo(imageSelectLibraryButton.snp.bottom).offset(10)
-            make.height.equalTo(200)
-        }
-        accountContainerView.snp.makeConstraints { (make) in
-            make.edges.equalTo(stackViewContainer)
-        }
-        //        createButton.snp.makeConstraints { (make) in
-        //            make.left.equalTo(130)
-        //            make.right.equalTo(-130)
-        //            make.top.equalTo(accountContainerView.snp.bottom).offset(40)
-        //            make.height.equalTo(40)
-        //        }
+        NSLayoutConstraint.activate([stackViewContainer.topAnchor.constraint(equalTo: imageSelectLibraryButton.bottomAnchor, constant: 5),stackViewContainer.heightAnchor.constraint(equalTo: scrollViewScreen.heightAnchor, multiplier: 0.75)])
+//        stackViewContainer.snp.makeConstraints { (make) in
+//            make.left.equalTo(10)
+//            make.right.equalTo(-100)
+//            make.top.equalTo(imageSelectLibraryButton.snp.bottom).offset(10)
+//            make.height.equalTo(200)
+//        }
+       accountContainerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([accountContainerView.centerXAnchor.constraint(equalTo: stackViewContainer.centerXAnchor), accountContainerView.centerYAnchor.constraint(equalTo: stackViewContainer.centerYAnchor)])
+        
         
     }
     
