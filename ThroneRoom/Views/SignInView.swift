@@ -49,7 +49,7 @@ class SignInView: UIView {
         textfield.placeholder = "   Enter Password"
         textfield.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         textfield.isSecureTextEntry = true 
-       // textfield.layer.cornerRadius = 5
+        // textfield.layer.cornerRadius = 5
         return textfield
     }()
     
@@ -62,7 +62,7 @@ class SignInView: UIView {
         button.layer.cornerRadius = 10
         return button
     }()
-
+    
     lazy var createAccountButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
@@ -88,10 +88,6 @@ class SignInView: UIView {
         accountView.layer.cornerRadius = 10
         return accountView
     }()
-    private var tapGesture: UITapGestureRecognizer = {
-       let tapGestureRecognizer = UITapGestureRecognizer()
-        return tapGestureRecognizer
-    }()
     
     private var accountLoginState = AccountLoginState.newAccount
     
@@ -113,6 +109,7 @@ class SignInView: UIView {
         addSubview(createAccountButton)
         addSubview(signInButton)
         setupViews()
+        accountButtons()
     }
     private func setupViews() {
         backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -120,7 +117,7 @@ class SignInView: UIView {
         self.addSubview(stackViewContainer)
         
         stackViewContainer.addSubview(accountContainerView)
-
+        
         logo.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
             make.centerY.equalTo(self.snp.centerY).offset(-176)
@@ -145,43 +142,21 @@ class SignInView: UIView {
             make.left.equalTo(120)
             make.right.equalTo(-120)
         }
-       
-        signInButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
         
+        
+    }
+    
+    func accountButtons() {
+        
+        signInButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
     }
     @objc func signInButtonPressed() {
         print("I'm signing in")
         /// TO-DO log in should redirect to homescreen
-//        let homeViewController = HomeViewController()
-//        self.navigationController?.pushViewController(homeViewController, animated: true)
         
-        delegate?.didSelectSignInButton(self, accountLoginState: accountLoginState)
-        let homeViewController = HomeViewController()
-        let bibleViewController = BibleViewController()
-        let prayerViewController = PrayerViewController()
-        let praiseJournalViewController = PraiseJournalViewController()
+        //
+        //        delegate?.didSelectSignInButton(self, accountLoginState: accountLoginState)
         
-        let tabBar = UITabBarController()
-        tabBar.tabBar.barTintColor = UIColor.white
-        
-        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "icons8-home-page-32"), tag: 0)
-        let homeViewControllerNavigation = UINavigationController.init(rootViewController: homeViewController)
-        
-        
-        let bibleViewControllerNavigation = UINavigationController.init(rootViewController: bibleViewController)
-        bibleViewController.tabBarItem = UITabBarItem(title: "Bible"
-            , image: #imageLiteral(resourceName: "icons8-literature-32") , tag: 1)
-        
-        let prayerViewControllerNavigation = UINavigationController.init(rootViewController: prayerViewController)
-        prayerViewController.tabBarItem = UITabBarItem(title: "Prayer", image: #imageLiteral(resourceName: "icons8-pray-32-2"), tag: 2)
-        
-        let praiseJournalViewControllerNavigation = UINavigationController(rootViewController: praiseJournalViewController)
-        praiseJournalViewController.tabBarItem = UITabBarItem(title: "Praise", image: #imageLiteral(resourceName: "icons8-heart-32-2"), tag: 3)
-        
-        tabBar.viewControllers = [homeViewController, UINavigationController(rootViewController: bibleViewController), UINavigationController(rootViewController: prayerViewController), UINavigationController(rootViewController: praiseJournalViewController) ]
-//
-//        launchScreenViewController.present(tabBar, animated: true, completion: nil)
-//         self.navigationController?.pushViewController(tabBar, animated: true) 
     }
     
     

@@ -25,7 +25,7 @@ class SignInViewController: UIViewController {
     func accountButtons() {
 //        signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
 //        signInView.signInButton.addTarget(self, action: #selector(signInExistingButton), for: .touchUpInside)
-        signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
+//        signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
     }
     @objc func createAccountButton(){
     print("I'm creating!")

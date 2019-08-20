@@ -75,7 +75,7 @@ class CreateView: UIView {
     var imageSelectCameraButton: UIButton = {
         var button = UIButton()
         button.setImage(#imageLiteral(resourceName: "icons8-camera-32"), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.8881786466, green: 0.6940811276, blue: 0.7372483611, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9983372092, green: 0.775170505, blue: 0.8276844621, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         button.isEnabled = true
@@ -84,7 +84,7 @@ class CreateView: UIView {
     var imageSelectLibraryButton: UIButton = {
         var button = UIButton()
         button.setImage(#imageLiteral(resourceName: "icons8-literature-32"), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.8154054284, green: 0.6358103156, blue: 0.6786857247, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9996258616, green: 0.7667750716, blue: 0.8282625079, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         button.isEnabled = true
@@ -159,7 +159,7 @@ class CreateView: UIView {
         var button = UIButton()
         button.setTitle("Create Account", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9787860513, green: 0.7553177476, blue: 0.8252794743, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         button.isEnabled = true
