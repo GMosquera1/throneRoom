@@ -90,6 +90,15 @@ class CreateView: UIView {
         button.isEnabled = true
         return button
     }()
+    lazy var buttonStackView: UIStackView = {
+        let buttonView = UIStackView(arrangedSubviews: [imageSelectCameraButton, imageSelectLibraryButton])
+        buttonView.axis = .horizontal 
+        buttonView.distribution = .fillEqually
+        //buttonView.spacing = 2
+        buttonView.layer.masksToBounds = true
+        buttonView.layer.cornerRadius = 10
+        return buttonView
+    }()
     
     var emailCreatedTextField: UITextField = {
         let textfield = UITextField()
@@ -154,15 +163,15 @@ class CreateView: UIView {
         vc.backgroundColor = .clear
         return vc
     }()
-    lazy var createAccountContainerView: UIView = {
-        let createContainerView = UIView()
-        createContainerView.layer.cornerRadius = 10
-        createContainerView.layer.masksToBounds = true
-        createContainerView.backgroundColor = .clear
-        createContainerView.isUserInteractionEnabled = true
-        createContainerView.translatesAutoresizingMaskIntoConstraints = false 
-        return createContainerView
-    }()
+//    lazy var createAccountContainerView: UIView = {
+//        let createContainerView = UIView()
+//        createContainerView.layer.cornerRadius = 10
+//        createContainerView.layer.masksToBounds = true
+//        createContainerView.backgroundColor = .clear
+//        createContainerView.isUserInteractionEnabled = true
+//        createContainerView.translatesAutoresizingMaskIntoConstraints = false
+//        return createContainerView
+//    }()
     
     lazy var accountContainerView: UIStackView = {
         let accountView = UIStackView(arrangedSubviews: [displayNameTextField, fullNameTextField, cityTextField, emailCreatedTextField, passwordCreatedTextField])
@@ -174,15 +183,6 @@ class CreateView: UIView {
         return accountView
     }()
     
-    lazy var buttonStackView: UIStackView = {
-        let buttonView = UIStackView(arrangedSubviews: [imageSelectCameraButton, imageSelectLibraryButton])
-        buttonView.axis = .horizontal
-        buttonView.distribution = .fillEqually
-        //buttonView.spacing = 2
-        buttonView.layer.masksToBounds = true
-        buttonView.layer.cornerRadius = 10
-        return buttonView
-    }()
     private func commonInit(){
         addSubview(scrollViewScreen)
         scrollViewScreen.translatesAutoresizingMaskIntoConstraints = false
@@ -203,7 +203,7 @@ class CreateView: UIView {
         scrollViewScreen.addSubview(createButton)
         scrollViewScreen.addSubview(buttonStackView)
         
-        stackViewContainer.addSubview(accountContainerView)
+       // stackViewContainer.addSubview(accountContainerView)
         
         
         logo.translatesAutoresizingMaskIntoConstraints = false
@@ -236,10 +236,10 @@ class CreateView: UIView {
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([buttonStackView.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor, constant: 150), buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100) ])
-        accountContainerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([accountContainerView.centerXAnchor.constraint(equalTo: stackViewContainer.centerXAnchor), accountContainerView.centerYAnchor.constraint(equalTo: stackViewContainer.centerYAnchor)])
-        
+//        accountContainerView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([accountContainerView.centerXAnchor.constraint(equalTo: stackViewContainer.centerXAnchor), accountContainerView.centerYAnchor.constraint(equalTo: stackViewContainer.centerYAnchor)])
+//
         createButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([createButton.topAnchor.constraint(equalTo: stackViewContainer.bottomAnchor), createButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10), createButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)])
