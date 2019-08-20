@@ -152,10 +152,13 @@ class SignInView: UIView {
     }
     @objc func signInButtonPressed() {
         print("I'm signing in")
+        delegate?.didSelectSignInButton(self, accountLoginState: accountLoginState)
+        
+        
         /// TO-DO log in should redirect to homescreen
         
         //
-        //        delegate?.didSelectSignInButton(self, accountLoginState: accountLoginState)
+        //
         
     }
     
