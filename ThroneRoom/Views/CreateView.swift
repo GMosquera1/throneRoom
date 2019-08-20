@@ -25,8 +25,8 @@ class CreateView: UIView {
         throneRoomUserImage.contentMode = .scaleAspectFill
         throneRoomUserImage.layer.cornerRadius = throneRoomUserImage.frame.size.width / 2
         throneRoomUserImage.layer.masksToBounds = false
-        throneRoomUserImage.layer.borderColor = #colorLiteral(red: 1, green: 0.7713925838, blue: 0.8318699598, alpha: 1)
-        throneRoomUserImage.layer.borderWidth = 3
+        //throneRoomUserImage.layer.borderColor = #colorLiteral(red: 1, green: 0.7713925838, blue: 0.8318699598, alpha: 1)
+        //throneRoomUserImage.layer.borderWidth = 3
         throneRoomUserImage.clipsToBounds = true
     }
     
@@ -75,7 +75,7 @@ class CreateView: UIView {
     var imageSelectCameraButton: UIButton = {
         var button = UIButton()
         button.setImage(#imageLiteral(resourceName: "icons8-camera-32"), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 1, green: 0.8934749961, blue: 0.8764544129, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.8881786466, green: 0.6940811276, blue: 0.7372483611, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         button.isEnabled = true
@@ -84,7 +84,7 @@ class CreateView: UIView {
     var imageSelectLibraryButton: UIButton = {
         var button = UIButton()
         button.setImage(#imageLiteral(resourceName: "icons8-literature-32"), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 1, green: 0.8934749961, blue: 0.8764544129, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.8154054284, green: 0.6358103156, blue: 0.6786857247, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         button.isEnabled = true
@@ -92,14 +92,41 @@ class CreateView: UIView {
     }()
     lazy var buttonStackView: UIStackView = {
         let buttonView = UIStackView(arrangedSubviews: [imageSelectCameraButton, imageSelectLibraryButton])
-        buttonView.axis = .horizontal 
+        buttonView.axis = .horizontal
         buttonView.distribution = .fillEqually
-        //buttonView.spacing = 2
+        buttonView.spacing = 4
         buttonView.layer.masksToBounds = true
         buttonView.layer.cornerRadius = 10
         return buttonView
     }()
-    
+    var displayNameTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
+        textfield.textColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
+        //TODO: find out how to align (Indent) text
+        textfield.placeholder = "  Display Name"
+        // textfield.textAlignment
+        textfield.layer.cornerRadius = 5
+        return textfield
+    }()
+    var fullNameTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
+        textfield.textColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
+        //TODO: find out how to align (Indent) text
+        textfield.placeholder = "  Full Name"
+        // textfield.textAlignment
+        textfield.layer.cornerRadius = 5
+        return textfield
+    }()
+    var cityTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
+        textfield.textColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
+        textfield.placeholder = "  City/ Country"
+        textfield.layer.cornerRadius = 5
+        return textfield
+    }()
     var emailCreatedTextField: UITextField = {
         let textfield = UITextField()
         textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
@@ -108,70 +135,15 @@ class CreateView: UIView {
         textfield.layer.cornerRadius = 5
         return textfield
     }()
-    
     var passwordCreatedTextField: UITextField = {
         let textfield = UITextField()
         textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
         textfield.textColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         textfield.placeholder = "  Enter Password"
         textfield.isSecureTextEntry = true
+        textfield.layer.cornerRadius = 5
         return textfield
     }()
-    
-    var displayNameTextField: UITextField = {
-        let textfield = UITextField()
-        textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
-        textfield.textColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
-        //TODO: find out how to align (Indent) text
-        textfield.placeholder = "  Display Name"
-        // textfield.textAlignment
-        return textfield
-    }()
-    
-    var fullNameTextField: UITextField = {
-        let textfield = UITextField()
-        textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
-        textfield.textColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
-        //TODO: find out how to align (Indent) text
-        textfield.placeholder = "  Full Name"
-        // textfield.textAlignment
-        return textfield
-    }()
-    var cityTextField: UITextField = {
-        let textfield = UITextField()
-        textfield.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
-        textfield.textColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
-        textfield.placeholder = "  City/ Country"
-        return textfield
-    }()
-    
-    lazy var createButton: UIButton = {
-        var button = UIButton()
-        button.setTitle("Create Account", for: .normal)
-        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 1, green: 0.8934749961, blue: 0.8764544129, alpha: 1)
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = 10
-        button.isEnabled = true
-        return button
-    }()
-    
-    lazy var stackViewContainer: UIView = {
-        let vc = UIView()
-        vc.layer.cornerRadius = 10
-        vc.layer.masksToBounds = true
-        vc.backgroundColor = .clear
-        return vc
-    }()
-//    lazy var createAccountContainerView: UIView = {
-//        let createContainerView = UIView()
-//        createContainerView.layer.cornerRadius = 10
-//        createContainerView.layer.masksToBounds = true
-//        createContainerView.backgroundColor = .clear
-//        createContainerView.isUserInteractionEnabled = true
-//        createContainerView.translatesAutoresizingMaskIntoConstraints = false
-//        return createContainerView
-//    }()
     
     lazy var accountContainerView: UIStackView = {
         let accountView = UIStackView(arrangedSubviews: [displayNameTextField, fullNameTextField, cityTextField, emailCreatedTextField, passwordCreatedTextField])
@@ -181,6 +153,17 @@ class CreateView: UIView {
         accountView.layer.masksToBounds = true
         accountView.layer.cornerRadius = 10
         return accountView
+    }()
+    
+    lazy var createButton: UIButton = {
+        var button = UIButton()
+        button.setTitle("Create Account", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1), for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 10
+        button.isEnabled = true
+        return button
     }()
     
     private func commonInit(){
@@ -197,13 +180,9 @@ class CreateView: UIView {
         
         scrollViewScreen.addSubview(logo)
         scrollViewScreen.addSubview(throneRoomUserImage)
-        scrollViewScreen.addSubview(imageSelectCameraButton)
-        scrollViewScreen.addSubview(imageSelectLibraryButton)
-        scrollViewScreen.addSubview(stackViewContainer)
-        scrollViewScreen.addSubview(createButton)
         scrollViewScreen.addSubview(buttonStackView)
-        
-       // stackViewContainer.addSubview(accountContainerView)
+        scrollViewScreen.addSubview(accountContainerView)
+        scrollViewScreen.addSubview(createButton)
         
         
         logo.translatesAutoresizingMaskIntoConstraints = false
@@ -213,36 +192,14 @@ class CreateView: UIView {
                                       logo.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor)])
         throneRoomUserImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([throneRoomUserImage.topAnchor.constraint(equalToSystemSpacingBelow: logo.bottomAnchor, multiplier: 0.4), throneRoomUserImage.centerXAnchor.constraint(equalTo: scrollViewScreen.centerXAnchor), throneRoomUserImage.heightAnchor.constraint(equalTo: throneRoomUserImage.widthAnchor), throneRoomUserImage.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor, multiplier: 0.5)])
-        
-        imageSelectLibraryButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([imageSelectLibraryButton.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor), imageSelectLibraryButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            ])
-
-        imageSelectCameraButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([imageSelectCameraButton.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor), imageSelectCameraButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40)
-            ])
-        
-        //imageSelectCameraButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40)
-        stackViewContainer.translatesAutoresizingMaskIntoConstraints = false
-        //stackViewContainer.topAnchor.constraint(equalTo: imageSelectLibraryButton.bottomAnchor, constant: 5)
-        NSLayoutConstraint.activate([stackViewContainer.topAnchor.constraint(equalTo: imageSelectLibraryButton.bottomAnchor, constant: 5),stackViewContainer.heightAnchor.constraint(equalTo: scrollViewScreen.heightAnchor, multiplier: 0.75), stackViewContainer.widthAnchor.constraint(equalTo: scrollViewScreen.widthAnchor, multiplier: 0.90), stackViewContainer.leadingAnchor.constraint(equalTo: leadingAnchor), stackViewContainer.trailingAnchor.constraint(equalTo: trailingAnchor)])
-//        stackViewContainer.snp.makeConstraints { (make) in
-//            make.left.equalTo(10)
-//            make.right.equalTo(-100)
-//            make.top.equalTo(imageSelectLibraryButton.snp.bottom).offset(10)
-//            make.height.equalTo(200)
-//        }
-      
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([buttonStackView.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor, constant: 150), buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100) ])
-//        accountContainerView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([accountContainerView.centerXAnchor.constraint(equalTo: stackViewContainer.centerXAnchor), accountContainerView.centerYAnchor.constraint(equalTo: stackViewContainer.centerYAnchor)])
-//
+        NSLayoutConstraint.activate([buttonStackView.topAnchor.constraint(equalTo: throneRoomUserImage.bottomAnchor, constant: 15), buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100) ])
+        accountContainerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([accountContainerView.topAnchor.constraint(equalTo: buttonStackView.bottomAnchor, constant: 25), accountContainerView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 25), accountContainerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25), accountContainerView.heightAnchor.constraint(equalToConstant: 250)])
         createButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([createButton.topAnchor.constraint(equalTo: stackViewContainer.bottomAnchor), createButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10), createButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)])
+        NSLayoutConstraint.activate([createButton.topAnchor.constraint(equalTo: accountContainerView.bottomAnchor, constant: 25), createButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100), createButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)])
         
     }
     
