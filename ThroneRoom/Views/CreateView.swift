@@ -62,9 +62,7 @@ class CreateView: UIView {
         pickerController.sourceType = .photoLibrary
         return pickerController
     }()
-    
-    
-    
+
     var throneRoomUserImage: UIImageView = {
         let userImage = UIImageView()
         userImage.image = #imageLiteral(resourceName: "versePlaceHolder")
@@ -165,6 +163,12 @@ class CreateView: UIView {
         button.isEnabled = true
         return button
     }()
+    
+    
+    func createdAccount() {
+        
+        
+    }
     
     private func commonInit(){
         addSubview(scrollViewScreen)
