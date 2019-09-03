@@ -20,7 +20,7 @@ class SignInViewController: UIViewController {
         self.view.addSubview(signInView)
         accountButtons()
         view.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
-
+        signInView.delegate = self
     }
     func accountButtons() {
 //        signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
@@ -29,9 +29,7 @@ class SignInViewController: UIViewController {
     }
     @objc func createAccountButton(){
     print("I'm creating!")
-        let createAccountViewController = CreateAccountViewController()
-        self.navigationController?.pushViewController(createAccountViewController, animated: true)
-    
+
     }
 //    @objc func signInExistingButton() {
 //        print("I'm signing in")
@@ -39,4 +37,21 @@ class SignInViewController: UIViewController {
 //        let homeViewController = HomeViewController()
 //        self.navigationController?.pushViewController(homeViewController, animated: true)
 //    }
+}
+
+extension SignInViewController: SignInViewDelegate {
+    func didSelectSignInButton(_ signInView: SignInView, accountLoginState: AccountLoginState) {
+        
+    }
+    
+    func didSelectCreateAccountButton() {
+        let createAccountViewController = CreateAccountViewController()
+        
+        self.navigationController?.pushViewController(createAccountViewController, animated: true)
+        
+        
+    }
+    
+    
+    
 }

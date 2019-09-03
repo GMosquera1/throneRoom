@@ -14,7 +14,9 @@ enum AccountLoginState {
     case newAccount
 }
 protocol SignInViewDelegate: AnyObject {
-    func didSelectSignInButton(_ signInView: SignInView, accountLoginState: AccountLoginState )
+    func didSelectSignInButton(_ signInView: SignInView, accountLoginState: AccountLoginState)
+    
+    func didSelectCreateAccountButton()
 }
 
 class SignInView: UIView {
@@ -149,6 +151,8 @@ class SignInView: UIView {
     func accountButtons() {
         
         signInButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
+        
+        createAccountButton.addTarget(self, action: #selector(createAccountButtonPressed), for: .touchUpInside)
     }
     @objc func signInButtonPressed() {
         print("I'm signing in")
@@ -160,6 +164,17 @@ class SignInView: UIView {
         //
         //
         
+        
+        
+        
+        
+    }
+    
+    @objc func createAccountButtonPressed() {
+        print("I am creating an account")
+  delegate?.didSelectCreateAccountButton()
+    
+    
     }
     
     
