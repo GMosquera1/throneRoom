@@ -33,8 +33,6 @@ class CreateView: UIView {
     
     var scrollViewScreen: UIScrollView = {
         let scrollView = UIScrollView()
-        //scrollView.isScrollEnabled = true
-        // scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .white
         //scrollView.bounces = true
         //scrollView.alwaysBounceVertical = true

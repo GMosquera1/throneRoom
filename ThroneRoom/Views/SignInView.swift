@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 enum AccountLoginState {
     case existingAccount
@@ -21,10 +20,10 @@ protocol SignInViewDelegate: AnyObject {
 
 class SignInView: UIView {
     
-    private var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        return view
+    var scrollViewSignInScreen: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = .white
+        return scrollView
     }()
     
     private var logo: UILabel = {
@@ -74,13 +73,13 @@ class SignInView: UIView {
         button.layer.cornerRadius = 10
         return button
     }()
-    lazy var stackViewContainer: UIView = {
-        let vc = UIView()
-        vc.layer.cornerRadius = 10
-        vc.layer.masksToBounds = true
-        vc.backgroundColor = .clear
-        return vc
-    }()
+//    lazy var stackViewContainer: UIView = {
+//        let vc = UIView()
+//        vc.layer.cornerRadius = 10
+//        vc.layer.masksToBounds = true
+//        vc.backgroundColor = .clear
+//        return vc
+//    }()
     lazy var accountContainerView: UIStackView = {
         let accountView = UIStackView(arrangedSubviews: [ emailTextField, passwordTextField])
         accountView.axis = .vertical
@@ -106,7 +105,11 @@ class SignInView: UIView {
     }
     
     private func commonInit(){
-        addSubview(logo)
+        addSubview(scrollViewSignInScreen)
+        
+        scrollViewSignInScreen.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([scrollViewSignInScreen.topAnchor.constraint(equalTo: topAnchor), scrollViewSignInScreen.leadingAnchor.constraint(equalTo: leadingAnchor), scrollViewSignInScreen.trailingAnchor.constraint(equalTo: trailingAnchor), scrollViewSignInScreen.bottomAnchor.constraint(equalTo: bottomAnchor)])
+   
         addSubview(accountContainerView)
         addSubview(createAccountButton)
         addSubview(signInButton)
@@ -115,35 +118,22 @@ class SignInView: UIView {
     }
     private func setupViews() {
         backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.addSubview(logo)
-        self.addSubview(stackViewContainer)
         
-        stackViewContainer.addSubview(accountContainerView)
+        scrollViewSignInScreen.addSubview(logo)
         
-        logo.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.snp.centerX)
-            make.centerY.equalTo(self.snp.centerY).offset(-176)
-        }
-        stackViewContainer.snp.makeConstraints { (make) in
-            make.left.equalTo(20)
-            make.right.equalTo(-20)
-            make.top.equalTo(logo.snp.bottom).offset(50)
-            make.height.equalTo(99)
-        }
-        accountContainerView.snp.makeConstraints { (make) in
-            make.edges.equalTo(stackViewContainer)
-        }
         
-        createAccountButton.snp.makeConstraints { (make) in
-            make.top.equalTo(passwordTextField.snp.bottom).offset(30)
-            make.left.equalTo(120)
-            make.right.equalTo(-120)
-        }
-        signInButton.snp.makeConstraints { (make) in
-            make.top.equalTo(createAccountButton.snp.bottom).offset(10)
-            make.left.equalTo(120)
-            make.right.equalTo(-120)
-        }
+            scrollViewSignInScreen.addSubview(accountContainerView)
+        scrollViewSignInScreen.addSubview(signInButton)
+        
+        scrollViewSignInScreen.addSubview(createAccountButton)
+        
+       logo.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([logo.topAnchor.constraint(equalToSystemSpacingBelow: scrollViewSignInScreen.topAnchor, multiplier: 0.5), logo.centerXAnchor.constraint(equalTo: scrollViewSignInScreen.centerXAnchor), logo.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1), logo.widthAnchor.constraint(equalTo: scrollViewSignInScreen.widthAnchor)])
+        
+        accountContainerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([accountContainerView.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 15), accountContainerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100), accountContainerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)])
+
         
         
     }
@@ -172,9 +162,9 @@ class SignInView: UIView {
     
     @objc func createAccountButtonPressed() {
         print("I am creating an account")
-  delegate?.didSelectCreateAccountButton()
-    
-    
+        delegate?.didSelectCreateAccountButton()
+        
+        
     }
     
     
