@@ -73,13 +73,13 @@ class SignInView: UIView {
         button.layer.cornerRadius = 10
         return button
     }()
-//    lazy var stackViewContainer: UIView = {
-//        let vc = UIView()
-//        vc.layer.cornerRadius = 10
-//        vc.layer.masksToBounds = true
-//        vc.backgroundColor = .clear
-//        return vc
-//    }()
+    //    lazy var stackViewContainer: UIView = {
+    //        let vc = UIView()
+    //        vc.layer.cornerRadius = 10
+    //        vc.layer.masksToBounds = true
+    //        vc.backgroundColor = .clear
+    //        return vc
+    //    }()
     lazy var accountContainerView: UIStackView = {
         let accountView = UIStackView(arrangedSubviews: [ emailTextField, passwordTextField])
         accountView.axis = .vertical
@@ -109,33 +109,33 @@ class SignInView: UIView {
         
         scrollViewSignInScreen.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([scrollViewSignInScreen.topAnchor.constraint(equalTo: topAnchor), scrollViewSignInScreen.leadingAnchor.constraint(equalTo: leadingAnchor), scrollViewSignInScreen.trailingAnchor.constraint(equalTo: trailingAnchor), scrollViewSignInScreen.bottomAnchor.constraint(equalTo: bottomAnchor)])
-   
-        addSubview(accountContainerView)
-        addSubview(createAccountButton)
-        addSubview(signInButton)
-        setupViews()
+        setupView()
         accountButtons()
     }
-    private func setupViews() {
-        backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    private func setupView() {
         
         scrollViewSignInScreen.addSubview(logo)
         
-        
-            scrollViewSignInScreen.addSubview(accountContainerView)
+        scrollViewSignInScreen.addSubview(accountContainerView)
         scrollViewSignInScreen.addSubview(signInButton)
         
         scrollViewSignInScreen.addSubview(createAccountButton)
         
-       logo.translatesAutoresizingMaskIntoConstraints = false
+        logo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([logo.topAnchor.constraint(equalToSystemSpacingBelow: scrollViewSignInScreen.topAnchor, multiplier: 0.5), logo.centerXAnchor.constraint(equalTo: scrollViewSignInScreen.centerXAnchor), logo.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1), logo.widthAnchor.constraint(equalTo: scrollViewSignInScreen.widthAnchor)])
         
         accountContainerView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([accountContainerView.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 15), accountContainerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100), accountContainerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)])
+        NSLayoutConstraint.activate([accountContainerView.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 125), accountContainerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100), accountContainerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100), accountContainerView.heightAnchor.constraint(equalToConstant: 100)])
+        
+        createAccountButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([createAccountButton.topAnchor.constraint(equalTo: accountContainerView.bottomAnchor, constant: 75), createAccountButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100), createAccountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)])
+        
+        signInButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([signInButton.topAnchor.constraint(equalTo: createAccountButton.bottomAnchor, constant: 15), signInButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100), signInButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)])
 
-        
-        
     }
     
     func accountButtons() {
