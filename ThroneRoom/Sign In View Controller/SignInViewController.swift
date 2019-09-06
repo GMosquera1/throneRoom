@@ -27,10 +27,10 @@ class SignInViewController: UIViewController {
 //        signInView.signInButton.addTarget(self, action: #selector(signInExistingButton), for: .touchUpInside)
 //        signInView.createAccountButton.addTarget(self, action: #selector(createAccountButton), for: .touchUpInside)
     }
-    @objc func createAccountButton(){
-    print("I'm creating!")
-
-    }
+//    @objc func createAccountButton(){
+//    print("I'm creating!")
+//
+//    }
 //    @objc func signInExistingButton() {
 //        print("I'm signing in")
 //        /// TO-DO log in should redirect to homescreen
@@ -41,6 +41,10 @@ class SignInViewController: UIViewController {
 
 extension SignInViewController: SignInViewDelegate {
     func didSelectSignInButton(_ signInView: SignInView, accountLoginState: AccountLoginState) {
+        
+        let homeViewController = HomeViewController()
+        
+        self.navigationController?.pushViewController(homeViewController, animated: true)
         
     }
     

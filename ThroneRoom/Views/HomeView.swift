@@ -10,6 +10,19 @@ import UIKit
 
 class HomeView: UIView {
     
+    public lazy var greetingLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .black
+        label.text = "Welcome"
+        //TODO - Add today's date
+        label.textColor = .white
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
+    
+    
     public lazy var verseImage: UIImageView = {
         let image = UIImageView(image: #imageLiteral(resourceName: "versePlaceHolder"))
         image.contentMode = .scaleToFill

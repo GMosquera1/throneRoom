@@ -73,13 +73,7 @@ class SignInView: UIView {
         button.layer.cornerRadius = 10
         return button
     }()
-    //    lazy var stackViewContainer: UIView = {
-    //        let vc = UIView()
-    //        vc.layer.cornerRadius = 10
-    //        vc.layer.masksToBounds = true
-    //        vc.backgroundColor = .clear
-    //        return vc
-    //    }()
+
     lazy var accountContainerView: UIStackView = {
         let accountView = UIStackView(arrangedSubviews: [ emailTextField, passwordTextField])
         accountView.axis = .vertical
@@ -126,7 +120,7 @@ class SignInView: UIView {
         
         accountContainerView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([accountContainerView.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 125), accountContainerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100), accountContainerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100), accountContainerView.heightAnchor.constraint(equalToConstant: 100)])
+        NSLayoutConstraint.activate([accountContainerView.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 100), accountContainerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25), accountContainerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25), accountContainerView.heightAnchor.constraint(equalToConstant: 100)])
         
         createAccountButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -134,7 +128,7 @@ class SignInView: UIView {
         
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([signInButton.topAnchor.constraint(equalTo: createAccountButton.bottomAnchor, constant: 15), signInButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100), signInButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)])
+        NSLayoutConstraint.activate([signInButton.topAnchor.constraint(equalTo: createAccountButton.bottomAnchor, constant: 10), signInButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100), signInButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)])
 
     }
     
@@ -146,6 +140,8 @@ class SignInView: UIView {
     }
     @objc func signInButtonPressed() {
         print("I'm signing in")
+        
+        
         delegate?.didSelectSignInButton(self, accountLoginState: accountLoginState)
         
         
